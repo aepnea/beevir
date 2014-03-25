@@ -1,28 +1,29 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+En este Release se encuetra el modulo de login.
+dentro de sus features estan:
 
-Things you may want to cover:
+Login (obvio)
+=============
 
-* Ruby version
+se construyo con la gema devise puedes hacer un rake routes paratener detalle de las urls generadas
 
-* System dependencies
+Autorizacion 
+============
 
-* Configuration
+esta hecho con la gema CanCan, a el pertenece el modelo "ability.rb" en donde se le dan los permisos a los diferentes roles
 
-* Database creation
+Roles
+=======
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+esta construido con la gema Rolify, a causa de que no esta hecho el CRUD de los roles, es necesario crear los usuarios utilizando rails console siguiendo estas instrucciones
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+user = User.new
+user.email = "nombre@dominio.com"
+user.password = "password"
+user.save 
+
+user.add_role "admin" # puede ser admin, copropietario, arrendatario, copropietario_residente, comite , esta definido en ability.rb
+
+ 
