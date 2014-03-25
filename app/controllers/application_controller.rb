@@ -8,13 +8,11 @@ class ApplicationController < ActionController::Base
          "/comunidad/logout"
     elsif current_user.has_role? :arrendatario
     	  "/comunidad/logout"
+    elsif current_user.has_role? :copropietario_residente
+    	  "/comunidad/logout"
+    elsif current_user.has_role? :comite
+        "/comunidad/logout"
     end
-  #  if current_user.has_role? :copropietario_residente
-  #  	  "/comunidad/logout"
-  #  end
-  #  if current_user.has_role? :comite
-  #      "/comunidad/logout"
-  #  end
   end
   protect_from_forgery with: :exception
   rescue_from CanCan::AccessDenied do |exception|
