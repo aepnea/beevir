@@ -11,7 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140323213427) do
+ActiveRecord::Schema.define(version: 20140326155623) do
+
+  create_table "clientes", force: true do |t|
+    t.string   "razon_social"
+    t.string   "nombre"
+    t.string   "rut"
+    t.string   "direccion"
+    t.string   "email"
+    t.string   "telefono"
+    t.string   "nombre_contacto"
+    t.integer  "region_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "regiones", force: true do |t|
+    t.string   "nombre"
+    t.string   "numero"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "roles", force: true do |t|
     t.string   "name"
@@ -35,6 +55,7 @@ ActiveRecord::Schema.define(version: 20140323213427) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.integer  "cliente_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
