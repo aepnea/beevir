@@ -5,7 +5,9 @@
 
   <div class="form-inputs">
     <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :cliente_id, :collection => Cliente.all, :label_method => :nombre, :value_method => :id%>
+    <%= f.input :cliente_id, required: true, :collection => Cliente.all, :label_method => :nombre, :value_method => :id%>
+<%# agregando collection para ROL %>
+    <%= f.input :roles, required: true, :collection => Role.all, :label_method => :name, :value_method => :id%>
     <%= f.input :password, required: true %>
     <%= f.input :password_confirmation, required: true %>
   </div>

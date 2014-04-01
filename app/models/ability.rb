@@ -7,17 +7,13 @@ class Ability
      user ||= User.new # guest user (not logged in)
       if user.has_role? :admin
          can :manage, Admin
-      end
-      if user.has_role? :copropietario
+      elsif user.has_role? :copropietario
          can :manage, Comunidad #aca tengo que poner a los modelos a los cuales tendra acceso.
-      end
-      if user.has_role? :arrendatario
+      elsif user.has_role? :arrendatario
          can :manage, Comunidad
-      end
-      if user.has_role? :copropietario_residente
+      elsif user.has_role? :copropietario_residente
          can :manage, Comunidad
-      end
-      if user.has_role? :comite
+      elsif user.has_role? :comite
          can :manage, Comunidad
       end
     #

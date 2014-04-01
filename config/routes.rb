@@ -2,7 +2,6 @@ Beevir::Application.routes.draw do
   
  
   resources :clientes
-
   resources :regiones
 
     get "admin/index"
@@ -13,7 +12,10 @@ Beevir::Application.routes.draw do
 
 
   devise_scope :user do 
-    get "/users/sign_up" => "devise/registrations#new"
+  #  get "/login" => "devise/registrations#new"
+    get "/login" => "devise/sessions#new"
+    post "/login" => "devise/sessions#create"
+    delete "/logout" => "devise/sessions#destroy"
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

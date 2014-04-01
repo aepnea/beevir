@@ -15,8 +15,8 @@ class ApplicationController < ActionController::Base
     end
   end
   protect_from_forgery with: :exception
-  rescue_from CanCan::AccessDenied do |exception|
-  		#flash[:error] = "Acceso Denegado."
-  		#redirect_to root_url
-  end
+#  rescue_from CanCan::AccessDenied do |exception|
+#  		flash[:error] = "Acceso Denegado."
+#  		redirect_to new_user_session
+# end
 end
