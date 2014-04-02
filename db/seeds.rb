@@ -23,4 +23,5 @@ Region.create([{nombre: 'Región de Arica y Parinacota', numero: 'XV'}, \
 			   {nombre: 'Región de Los Lagos', numero: 'X'}, \
 			   {nombre: 'Región de Aysén', numero: 'XI'}, \
 			   {nombre: 'Región de Magallanes', numero: 'XII'}])
+Cliente.create([{razon_social: 'Beevir SpA', nombre: 'Beevir', rut: '15119027-8', direccion: 'German Riesco 430', email: 'contacto@beevir.com', telefono: '72101837', nombre_contacto: 'Cristian Vasquez', region_id: '8'}])
 
