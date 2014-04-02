@@ -6,6 +6,8 @@
  ActiveSupport::Inflector.inflections do |inflect|
  	inflect.irregular 'cliente', 'clientes'
  	inflect.irregular 'region', 'regiones'
+ 	inflect.irregular 'usuario', 'usuarios'
+
  end
 #   inflect.plural /^(ox)$/i, '\1en'
 #   inflect.singular /^(ox)en/i, '\1'

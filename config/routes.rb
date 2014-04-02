@@ -1,9 +1,8 @@
 Beevir::Application.routes.draw do
   
- 
   resources :clientes
   resources :regiones
-
+  resources :users
     get "admin/index"
     get "comunidad/logout"
     get "comunidad/comunidad"
