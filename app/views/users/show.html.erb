@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @user.nombre %>
+</p>
+
+<p>
+  <strong>Apellido1:</strong>
+  <%= @user.apellido1 %>
+</p>
+
+<p>
+  <strong>Apellido2:</strong>
+  <%= @user.apellido2 %>
+</p>
+
+<p>
+  <strong>Rut:</strong>
+  <%= @user.rut %>
+</p>
+
+<p>
+  <strong>Fono:</strong>
+  <%= @user.fono %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @user.password %>
+</p>
+<!-- aca debe estar los roles -->
+<p>
+  <strong>Cliente:</strong>
+  <%= @user.cliente_id %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

@@ -1,0 +1,63 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this usuario from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<!-- tengo que agregar in if can manage? -->
+  <div class="field">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :apellido1 %><br>
+    <%= f.text_field :apellido1 %>
+  </div>
+  <div class="field">
+    <%= f.label :apellido2 %><br>
+    <%= f.text_field :apellido2 %>
+  </div>
+  <div class="field">
+    <%= f.label :rut %><br>
+    <%= f.text_field :rut %>
+  </div>
+  <div class="field">
+    <%= f.label :fono %><br>
+    <%= f.text_field :fono %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br>
+    <%= f.password_field :password %>
+  </div>
+ 
+ <!-- ROLES -->
+
+  <div class="field">
+      <%= f.label :roles_ids %>
+      <div class="controls">
+        <% Role.all.each do |role| %>
+          <%= check_box_tag "user[role_ids][]", role.id, @user.role_ids.include?(role.id) %>
+          <%= role.name %><br />
+        <% end %>
+      </div>
+    </div>
+
+
+  <div class="field">
+    <%= f.label :cliente_id %><br>
+    <%= f.collection_select :cliente_id, Cliente.all, :id, :razon_social %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
