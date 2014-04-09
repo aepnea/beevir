@@ -19,6 +19,16 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string   :current_sign_in_ip
       t.string   :last_sign_in_ip
       t.integer  :cliente_id
+      
+      ## Agregando campos necesarios que no vienen en Devise
+      t.string :nombre
+      t.string :apellido1
+      t.string :apellido2
+      t.string :rut
+      t.string :fono
+
+      ## Agregando relacion con modelo Cliente
+      t.integer :cliente_id
 
       ## Confirmable
       # t.string   :confirmation_token

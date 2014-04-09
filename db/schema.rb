@@ -56,6 +56,11 @@ ActiveRecord::Schema.define(version: 20140326155623) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.integer  "cliente_id"
+    t.string   "nombre"
+    t.string   "apellido1"
+    t.string   "apellido2"
+    t.string   "rut"
+    t.string   "fono"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
