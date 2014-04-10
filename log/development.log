@@ -29528,3 +29528,942 @@ Started GET "/" for 127.0.0.1 at 2014-04-09 17:46:17 -0300
 Processing by Rails::WelcomeController#index as HTML
   Rendered /home/aepnea/.rvm/gems/ruby-2.0.0-p353/gems/railties-4.0.2/lib/rails/templates/rails/welcome/index.html.erb (0.1ms)
 Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'copropietario@beevir.com' LIMIT 1
+  [1m[36mSQL (92.5ms)[0m  [1mINSERT INTO `users` (`created_at`, `email`, `encrypted_password`, `updated_at`) VALUES ('2014-04-10 02:05:16', 'copropietario@beevir.com', '$2a$10$6taIC33Y95Nnz0EczFcNJ.kUk.N7baWMh9m0AUU69/IovJPbsUdWO', '2014-04-10 02:05:16')[0m
+  [1m[35m (1.6ms)[0m  COMMIT
+  [1m[36mRole Load (0.4ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE `roles`.`name` = 'copropietario' AND `roles`.`resource_type` IS NULL AND `roles`.`resource_id` IS NULL ORDER BY `roles`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (48.2ms)[0m  [1mINSERT INTO `roles` (`created_at`, `name`, `updated_at`) VALUES ('2014-04-10 02:07:51', 'copropietario', '2014-04-10 02:07:51')[0m
+  [1m[35m (1.7ms)[0m  COMMIT
+  [1m[36mRole Exists (0.7ms)[0m  [1mSELECT 1 AS one FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 10 AND `roles`.`id` = 2 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT `roles`.id FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 10
+  [1m[36mRole Load (0.5ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 2 LIMIT 1[0m
+  [1m[35mRole Load (0.7ms)[0m  SELECT `roles`.* FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 10
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (10.8ms)[0m  INSERT INTO `users_roles` (`user_id`, `role_id`) VALUES (10, 2)
+  [1m[36m (3.5ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/admin/index" for 127.0.0.1 at 2014-04-09 23:09:16 -0300
+Processing by AdminController#index as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 16ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2014-04-09 23:09:16 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-09 23:09:16 -0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-09 23:09:16 -0300
+
+
+Started GET "/assets/regiones.css?body=1" for 127.0.0.1 at 2014-04-09 23:09:16 -0300
+
+
+Started GET "/assets/comunidad.css?body=1" for 127.0.0.1 at 2014-04-09 23:09:16 -0300
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-09 23:09:16 -0300
+
+
+Started GET "/assets/clientes.css?body=1" for 127.0.0.1 at 2014-04-09 23:09:16 -0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-09 23:09:16 -0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-09 23:09:17 -0300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-09 23:09:17 -0300
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2014-04-09 23:09:17 -0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-09 23:09:17 -0300
+
+
+Started GET "/assets/clientes.js?body=1" for 127.0.0.1 at 2014-04-09 23:09:17 -0300
+
+
+Started GET "/assets/usuarios.css?body=1" for 127.0.0.1 at 2014-04-09 23:09:17 -0300
+
+
+Started GET "/assets/regiones.js?body=1" for 127.0.0.1 at 2014-04-09 23:09:17 -0300
+
+
+Started GET "/assets/usuarios.js?body=1" for 127.0.0.1 at 2014-04-09 23:09:17 -0300
+
+
+Started GET "/assets/comunidad.js?body=1" for 127.0.0.1 at 2014-04-09 23:09:17 -0300
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-04-09 23:09:17 -0300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-09 23:09:17 -0300
+
+
+Started POST "/login" for 127.0.0.1 at 2014-04-09 23:09:53 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o44TRdycb8LDTcTP4Q+0UQju5iDQi6slun60fZb9AFs=", "user"=>{"email"=>"copropietario@beevir.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (1.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`email` = 'copropietario@beevir.com' ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2014-04-10 02:09:53', `current_sign_in_at` = '2014-04-10 02:09:53', `last_sign_in_ip` = '127.0.0.1', `current_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2014-04-10 02:09:53' WHERE `users`.`id` = 10
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (48.0ms)[0m  SELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 10 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 10 AND (((roles.name = 'copropietario') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+Redirected to http://localhost:3000/comunidad/logout
+Completed 302 Found in 137ms (ActiveRecord: 51.2ms)
+
+
+Started GET "/comunidad/logout" for 127.0.0.1 at 2014-04-09 23:09:53 -0300
+Processing by ComunidadController#logout as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 10 ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 10 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 10 AND (((roles.name = 'copropietario') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered comunidad/logout.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 26ms (Views: 11.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-09 23:09:53 -0300
+
+
+Started GET "/assets/clientes.css?body=1" for 127.0.0.1 at 2014-04-09 23:09:53 -0300
+
+
+Started GET "/assets/comunidad.css?body=1" for 127.0.0.1 at 2014-04-09 23:09:53 -0300
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-09 23:09:53 -0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-09 23:09:53 -0300
+
+
+Started GET "/assets/regiones.css?body=1" for 127.0.0.1 at 2014-04-09 23:09:53 -0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-09 23:09:53 -0300
+
+
+Started GET "/assets/usuarios.css?body=1" for 127.0.0.1 at 2014-04-09 23:09:53 -0300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-09 23:09:53 -0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-09 23:09:53 -0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-09 23:09:53 -0300
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2014-04-09 23:09:53 -0300
+
+
+Started GET "/assets/clientes.js?body=1" for 127.0.0.1 at 2014-04-09 23:09:53 -0300
+
+
+Started GET "/assets/comunidad.js?body=1" for 127.0.0.1 at 2014-04-09 23:09:53 -0300
+
+
+Started GET "/assets/regiones.js?body=1" for 127.0.0.1 at 2014-04-09 23:09:53 -0300
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-04-09 23:09:53 -0300
+
+
+Started GET "/assets/usuarios.js?body=1" for 127.0.0.1 at 2014-04-09 23:09:53 -0300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-09 23:09:53 -0300
+
+
+Started GET "/users/" for 127.0.0.1 at 2014-04-09 23:14:04 -0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 18ms (Views: 15.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-09 23:14:04 -0300
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-09 23:14:04 -0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-09 23:14:04 -0300
+
+
+Started GET "/assets/regiones.css?body=1" for 127.0.0.1 at 2014-04-09 23:14:04 -0300
+
+
+Started GET "/assets/comunidad.css?body=1" for 127.0.0.1 at 2014-04-09 23:14:04 -0300
+
+
+Started GET "/assets/clientes.css?body=1" for 127.0.0.1 at 2014-04-09 23:14:04 -0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-09 23:14:04 -0300
+
+
+Started GET "/assets/usuarios.css?body=1" for 127.0.0.1 at 2014-04-09 23:14:04 -0300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-09 23:14:04 -0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-09 23:14:04 -0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-09 23:14:05 -0300
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2014-04-09 23:14:05 -0300
+
+
+Started GET "/assets/usuarios.js?body=1" for 127.0.0.1 at 2014-04-09 23:14:05 -0300
+
+
+Started GET "/assets/comunidad.js?body=1" for 127.0.0.1 at 2014-04-09 23:14:05 -0300
+
+
+Started GET "/assets/regiones.js?body=1" for 127.0.0.1 at 2014-04-09 23:14:05 -0300
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-04-09 23:14:05 -0300
+
+
+Started GET "/assets/clientes.js?body=1" for 127.0.0.1 at 2014-04-09 23:14:05 -0300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-09 23:14:05 -0300
+
+
+Started GET "/users/10/edit" for 127.0.0.1 at 2014-04-09 23:14:17 -0300
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT `roles`.* FROM `roles`[0m
+  [1m[35m (0.7ms)[0m  SELECT `roles`.id FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 10
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `roles`.id FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 10[0m  [["user_id", 10]]
+  [1m[35mCliente Load (0.2ms)[0m  SELECT `clientes`.* FROM `clientes`
+  Rendered users/_form.html.erb (13.4ms)
+  Rendered users/edit.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 27ms (Views: 21.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2014-04-09 23:14:30 -0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin/index" for 127.0.0.1 at 2014-04-09 23:32:58 -0300
+Processing by AdminController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 10 ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 10 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 10 AND (((roles.name = 'copropietario') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+Redirected to http://localhost:3000/login
+Completed 302 Found in 22ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2014-04-09 23:32:58 -0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 10 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 10 AND (((roles.name = 'copropietario') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+Redirected to http://localhost:3000/comunidad/logout
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/comunidad/logout" for 127.0.0.1 at 2014-04-09 23:32:58 -0300
+Processing by ComunidadController#logout as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 10 ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 10 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 10 AND (((roles.name = 'copropietario') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered comunidad/logout.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 15ms (Views: 7.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-09 23:32:58 -0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-09 23:32:58 -0300
+
+
+Started GET "/assets/regiones.css?body=1" for 127.0.0.1 at 2014-04-09 23:32:58 -0300
+
+
+Started GET "/assets/usuarios.css?body=1" for 127.0.0.1 at 2014-04-09 23:32:58 -0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-09 23:32:58 -0300
+
+
+Started GET "/assets/comunidad.css?body=1" for 127.0.0.1 at 2014-04-09 23:32:58 -0300
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-09 23:32:58 -0300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-09 23:32:58 -0300
+
+
+Started GET "/assets/clientes.css?body=1" for 127.0.0.1 at 2014-04-09 23:32:58 -0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-09 23:32:58 -0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-09 23:32:58 -0300
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2014-04-09 23:32:58 -0300
+
+
+Started GET "/assets/regiones.js?body=1" for 127.0.0.1 at 2014-04-09 23:32:58 -0300
+
+
+Started GET "/assets/comunidad.js?body=1" for 127.0.0.1 at 2014-04-09 23:32:58 -0300
+
+
+Started GET "/assets/clientes.js?body=1" for 127.0.0.1 at 2014-04-09 23:32:58 -0300
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-04-09 23:32:58 -0300
+
+
+Started GET "/assets/usuarios.js?body=1" for 127.0.0.1 at 2014-04-09 23:32:58 -0300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-09 23:32:58 -0300
+
+
+Started GET "/users/" for 127.0.0.1 at 2014-04-09 23:34:36 -0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 10 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 10 AND (((roles.name = 'copropietario') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 87ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2014-04-09 23:34:37 -0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 10 ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 10 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 10 AND (((roles.name = 'copropietario') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+Redirected to http://localhost:3000/comunidad/logout
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/comunidad/logout" for 127.0.0.1 at 2014-04-09 23:34:37 -0300
+Processing by ComunidadController#logout as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 10 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 10 AND (((roles.name = 'copropietario') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered comunidad/logout.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 50ms (Views: 11.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-09 23:34:37 -0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-09 23:34:37 -0300
+
+
+Started GET "/assets/clientes.css?body=1" for 127.0.0.1 at 2014-04-09 23:34:37 -0300
+
+
+Started GET "/assets/comunidad.css?body=1" for 127.0.0.1 at 2014-04-09 23:34:37 -0300
+
+
+Started GET "/assets/regiones.css?body=1" for 127.0.0.1 at 2014-04-09 23:34:37 -0300
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-09 23:34:37 -0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-09 23:34:37 -0300
+
+
+Started GET "/assets/usuarios.css?body=1" for 127.0.0.1 at 2014-04-09 23:34:37 -0300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-09 23:34:37 -0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-09 23:34:37 -0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-09 23:34:37 -0300
+
+
+Started GET "/assets/clientes.js?body=1" for 127.0.0.1 at 2014-04-09 23:34:37 -0300
+
+
+Started GET "/assets/comunidad.js?body=1" for 127.0.0.1 at 2014-04-09 23:34:37 -0300
+
+
+Started GET "/assets/regiones.js?body=1" for 127.0.0.1 at 2014-04-09 23:34:37 -0300
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-04-09 23:34:37 -0300
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2014-04-09 23:34:37 -0300
+
+
+Started GET "/assets/usuarios.js?body=1" for 127.0.0.1 at 2014-04-09 23:34:37 -0300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-09 23:34:37 -0300
+
+
+Started GET "/clientes" for 127.0.0.1 at 2014-04-09 23:36:37 -0300
+Processing by ClientesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 10 ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 10 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 10 AND (((roles.name = 'copropietario') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+Redirected to http://localhost:3000/login
+Completed 302 Found in 45ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2014-04-09 23:36:37 -0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 10 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 10 AND (((roles.name = 'copropietario') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+Redirected to http://localhost:3000/comunidad/logout
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/comunidad/logout" for 127.0.0.1 at 2014-04-09 23:36:37 -0300
+Processing by ComunidadController#logout as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 10 ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 10 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 10 AND (((roles.name = 'copropietario') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered comunidad/logout.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 22ms (Views: 7.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-09 23:36:37 -0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-09 23:36:37 -0300
+
+
+Started GET "/assets/clientes.css?body=1" for 127.0.0.1 at 2014-04-09 23:36:37 -0300
+
+
+Started GET "/assets/comunidad.css?body=1" for 127.0.0.1 at 2014-04-09 23:36:37 -0300
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-09 23:36:37 -0300
+
+
+Started GET "/assets/regiones.css?body=1" for 127.0.0.1 at 2014-04-09 23:36:37 -0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-09 23:36:37 -0300
+
+
+Started GET "/assets/usuarios.css?body=1" for 127.0.0.1 at 2014-04-09 23:36:37 -0300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:37 -0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:37 -0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:37 -0300
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:37 -0300
+
+
+Started GET "/assets/comunidad.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:37 -0300
+
+
+Started GET "/assets/clientes.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:37 -0300
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:37 -0300
+
+
+Started GET "/assets/regiones.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:37 -0300
+
+
+Started GET "/assets/usuarios.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:37 -0300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:37 -0300
+
+
+Started GET "/regiones" for 127.0.0.1 at 2014-04-09 23:36:43 -0300
+Processing by RegionesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 10 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 10 AND (((roles.name = 'copropietario') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 14ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2014-04-09 23:36:43 -0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 10 ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 10 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 10 AND (((roles.name = 'copropietario') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+Redirected to http://localhost:3000/comunidad/logout
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/comunidad/logout" for 127.0.0.1 at 2014-04-09 23:36:43 -0300
+Processing by ComunidadController#logout as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 10 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 10 AND (((roles.name = 'copropietario') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered comunidad/logout.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 15ms (Views: 7.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-09 23:36:43 -0300
+
+
+Started GET "/assets/clientes.css?body=1" for 127.0.0.1 at 2014-04-09 23:36:43 -0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-09 23:36:43 -0300
+
+
+Started GET "/assets/regiones.css?body=1" for 127.0.0.1 at 2014-04-09 23:36:43 -0300
+
+
+Started GET "/assets/comunidad.css?body=1" for 127.0.0.1 at 2014-04-09 23:36:43 -0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-09 23:36:43 -0300
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-09 23:36:43 -0300
+
+
+Started GET "/assets/usuarios.css?body=1" for 127.0.0.1 at 2014-04-09 23:36:43 -0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:43 -0300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:43 -0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:43 -0300
+
+
+Started GET "/assets/usuarios.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:43 -0300
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:43 -0300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:43 -0300
+
+
+Started GET "/assets/comunidad.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:43 -0300
+
+
+Started GET "/assets/regiones.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:43 -0300
+
+
+Started GET "/assets/clientes.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:43 -0300
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:43 -0300
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2014-04-09 23:36:45 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ogzZXO4shorbwGb7nAb0ufYB4x4+3Vxb/tV1O4uW+UY="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 10 ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-09 23:36:45 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/aepnea/.rvm/gems/ruby-2.0.0-p353/gems/railties-4.0.2/lib/rails/templates/rails/welcome/index.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2014-04-09 23:36:51 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 22ms (Views: 20.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-09 23:36:52 -0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-09 23:36:52 -0300
+
+
+Started GET "/assets/clientes.css?body=1" for 127.0.0.1 at 2014-04-09 23:36:52 -0300
+
+
+Started GET "/assets/comunidad.css?body=1" for 127.0.0.1 at 2014-04-09 23:36:52 -0300
+
+
+Started GET "/assets/regiones.css?body=1" for 127.0.0.1 at 2014-04-09 23:36:52 -0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-09 23:36:52 -0300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:52 -0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:52 -0300
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:52 -0300
+
+
+Started GET "/assets/usuarios.css?body=1" for 127.0.0.1 at 2014-04-09 23:36:52 -0300
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-09 23:36:52 -0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:52 -0300
+
+
+Started GET "/assets/comunidad.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:52 -0300
+
+
+Started GET "/assets/clientes.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:52 -0300
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:52 -0300
+
+
+Started GET "/assets/usuarios.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:52 -0300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:52 -0300
+
+
+Started GET "/assets/regiones.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:52 -0300
+
+
+Started POST "/login" for 127.0.0.1 at 2014-04-09 23:36:57 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wq6yNg5czpFrOqp5QGJ5Ps5cNuQGLfxoUpst45GyhH0=", "user"=>{"email"=>"cvasquez@beevir.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'cvasquez@beevir.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `users` SET `last_sign_in_at` = '2014-04-09 20:44:51', `current_sign_in_at` = '2014-04-10 02:36:58', `sign_in_count` = 14, `updated_at` = '2014-04-10 02:36:58' WHERE `users`.`id` = 1[0m
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+Redirected to http://localhost:3000/admin/index
+Completed 302 Found in 88ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/admin/index" for 127.0.0.1 at 2014-04-09 23:36:58 -0300
+Processing by AdminController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered admin/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 33ms (Views: 14.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-09 23:36:58 -0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-09 23:36:58 -0300
+
+
+Started GET "/assets/comunidad.css?body=1" for 127.0.0.1 at 2014-04-09 23:36:58 -0300
+
+
+Started GET "/assets/regiones.css?body=1" for 127.0.0.1 at 2014-04-09 23:36:58 -0300
+
+
+Started GET "/assets/clientes.css?body=1" for 127.0.0.1 at 2014-04-09 23:36:58 -0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-09 23:36:58 -0300
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:58 -0300
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-09 23:36:58 -0300
+
+
+Started GET "/assets/usuarios.css?body=1" for 127.0.0.1 at 2014-04-09 23:36:58 -0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:58 -0300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:58 -0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:58 -0300
+
+
+Started GET "/assets/clientes.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:58 -0300
+
+
+Started GET "/assets/comunidad.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:58 -0300
+
+
+Started GET "/assets/usuarios.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:58 -0300
+
+
+Started GET "/assets/regiones.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:58 -0300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:58 -0300
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-04-09 23:36:58 -0300
+
+
+Started GET "/users/" for 127.0.0.1 at 2014-04-09 23:37:03 -0300
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users`
+  Rendered users/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 24ms (Views: 11.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-09 23:37:03 -0300
+
+
+Started GET "/assets/comunidad.css?body=1" for 127.0.0.1 at 2014-04-09 23:37:03 -0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-09 23:37:03 -0300
+
+
+Started GET "/assets/regiones.css?body=1" for 127.0.0.1 at 2014-04-09 23:37:03 -0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-09 23:37:03 -0300
+
+
+Started GET "/assets/clientes.css?body=1" for 127.0.0.1 at 2014-04-09 23:37:03 -0300
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-09 23:37:03 -0300
+
+
+Started GET "/assets/usuarios.css?body=1" for 127.0.0.1 at 2014-04-09 23:37:03 -0300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-09 23:37:03 -0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-09 23:37:03 -0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-09 23:37:03 -0300
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2014-04-09 23:37:03 -0300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-09 23:37:03 -0300
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-04-09 23:37:03 -0300
+
+
+Started GET "/assets/usuarios.js?body=1" for 127.0.0.1 at 2014-04-09 23:37:03 -0300
+
+
+Started GET "/assets/comunidad.js?body=1" for 127.0.0.1 at 2014-04-09 23:37:03 -0300
+
+
+Started GET "/assets/clientes.js?body=1" for 127.0.0.1 at 2014-04-09 23:37:04 -0300
+
+
+Started GET "/assets/regiones.js?body=1" for 127.0.0.1 at 2014-04-09 23:37:04 -0300
+
+
+Started GET "/clientes" for 127.0.0.1 at 2014-04-09 23:37:08 -0300
+Processing by ClientesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+Redirected to http://localhost:3000/login
+Completed 302 Found in 15ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2014-04-09 23:37:08 -0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+Redirected to http://localhost:3000/admin/index
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/index" for 127.0.0.1 at 2014-04-09 23:37:08 -0300
+Processing by AdminController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered admin/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 18ms (Views: 6.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-09 23:37:08 -0300
+
+
+Started GET "/assets/clientes.css?body=1" for 127.0.0.1 at 2014-04-09 23:37:08 -0300
+
+
+Started GET "/assets/comunidad.css?body=1" for 127.0.0.1 at 2014-04-09 23:37:08 -0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-09 23:37:08 -0300
+
+
+Started GET "/assets/regiones.css?body=1" for 127.0.0.1 at 2014-04-09 23:37:08 -0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-09 23:37:08 -0300
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-09 23:37:09 -0300
+
+
+Started GET "/assets/usuarios.css?body=1" for 127.0.0.1 at 2014-04-09 23:37:09 -0300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-09 23:37:09 -0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-09 23:37:09 -0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-09 23:37:09 -0300
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2014-04-09 23:37:09 -0300
+
+
+Started GET "/assets/clientes.js?body=1" for 127.0.0.1 at 2014-04-09 23:37:09 -0300
+
+
+Started GET "/assets/comunidad.js?body=1" for 127.0.0.1 at 2014-04-09 23:37:09 -0300
+
+
+Started GET "/assets/regiones.js?body=1" for 127.0.0.1 at 2014-04-09 23:37:09 -0300
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-04-09 23:37:09 -0300
+
+
+Started GET "/assets/usuarios.js?body=1" for 127.0.0.1 at 2014-04-09 23:37:09 -0300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-09 23:37:09 -0300
+
+
+Started GET "/clientes" for 127.0.0.1 at 2014-04-09 23:37:18 -0300
+Processing by ClientesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+Redirected to http://localhost:3000/login
+Completed 302 Found in 12ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2014-04-09 23:37:18 -0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+Redirected to http://localhost:3000/admin/index
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/index" for 127.0.0.1 at 2014-04-09 23:37:18 -0300
+Processing by AdminController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered admin/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 23ms (Views: 9.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-09 23:37:18 -0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-09 23:37:18 -0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-09 23:37:18 -0300
+
+
+Started GET "/assets/clientes.css?body=1" for 127.0.0.1 at 2014-04-09 23:37:18 -0300
+
+
+Started GET "/assets/comunidad.css?body=1" for 127.0.0.1 at 2014-04-09 23:37:18 -0300
+
+
+Started GET "/assets/regiones.css?body=1" for 127.0.0.1 at 2014-04-09 23:37:18 -0300
+
+
+Started GET "/assets/usuarios.css?body=1" for 127.0.0.1 at 2014-04-09 23:37:18 -0300
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-04-09 23:37:19 -0300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-09 23:37:19 -0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-09 23:37:19 -0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-09 23:37:19 -0300
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2014-04-09 23:37:19 -0300
+
+
+Started GET "/assets/clientes.js?body=1" for 127.0.0.1 at 2014-04-09 23:37:19 -0300
+
+
+Started GET "/assets/comunidad.js?body=1" for 127.0.0.1 at 2014-04-09 23:37:19 -0300
+
+
+Started GET "/assets/regiones.js?body=1" for 127.0.0.1 at 2014-04-09 23:37:19 -0300
+
+
+Started GET "/assets/usuarios.js?body=1" for 127.0.0.1 at 2014-04-09 23:37:19 -0300
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-04-09 23:37:19 -0300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-09 23:37:19 -0300
