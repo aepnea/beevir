@@ -6,7 +6,7 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 <% if user_signed_in? %>
-  Eres <%= current_user.email %>    <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
+  Eres <%= current_user.nombre %> <%=  current_user.apellido1 %>  <%=  current_user.apellido2 %>  <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
   <%end%>
 
 </head>

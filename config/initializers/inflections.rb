@@ -7,7 +7,7 @@
  	inflect.irregular 'cliente', 'clientes'
  	inflect.irregular 'region', 'regiones'
  	inflect.irregular 'usuario', 'usuarios'
-
+	inflect.irregular 'dios', 'dios'
  end
 #   inflect.plural /^(ox)$/i, '\1en'
 #   inflect.singular /^(ox)en/i, '\1'

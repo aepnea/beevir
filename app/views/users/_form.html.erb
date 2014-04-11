@@ -54,8 +54,8 @@
 
 
   <div class="field">
-    <%= f.label :cliente_id %><br>
-    <%= f.collection_select :cliente_id, Cliente.all, :id, :razon_social %>
+    <% cliente = current_user.cliente_id %>
+    <%= f.hidden_field :cliente_id, :value => cliente %><br>
   </div>
   <div class="actions">
     <%= f.submit %>

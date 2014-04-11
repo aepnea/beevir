@@ -6,6 +6,10 @@ class Ability
     #
      user ||= User.new # guest user (not logged in)
       if user.has_role? :admin
+        if user.has_role? :copropietario ## Validando si es admin y copropietario a la vez.
+          can :manage, Comunidad
+          can :manage, Admin
+        end
          can :manage, Admin
          can :manage, User
       elsif user.has_role? :copropietario

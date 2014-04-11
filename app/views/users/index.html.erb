@@ -10,7 +10,7 @@
       <th>Fono</th>
       <th>Email</th>
       <th>Role</th>
-      <th>Cliente</th>
+     <!-- <th>Cliente</th>-->
       <th></th>
       <th></th>
       <th></th>
@@ -18,7 +18,9 @@
   </thead>
 
   <tbody>
-    <% @users.each do |usuario| %>
+    <% current = current_user.cliente_id %>
+    <% users = User.where(cliente_id: current) %>
+    <% users.each do |usuario| %>
       <tr>
         <td><%= usuario.nombre %></td>
         <td><%= usuario.apellido1 %></td>
@@ -27,7 +29,7 @@
         <td><%= usuario.fono %></td>
         <td><%= usuario.email %></td>
         <td><%= usuario.role_ids %></td>
-        <td><%= usuario.cliente_id %></td>
+       <!-- <td><%= usuario.cliente_id %></td> -->
         <td><%= link_to 'Show', usuario %></td>
         <td><%= link_to 'Edit', edit_user_path(usuario) %></td>
         <td><%= link_to 'Destroy', usuario, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -2,6 +2,9 @@ Beevir::Application.routes.draw do
   
 
 
+
+
+
   resources :clientes
   resources :regiones
   resources :users

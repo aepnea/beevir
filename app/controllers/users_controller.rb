@@ -1,11 +1,13 @@
 class UsersController < ApplicationController
   load_and_authorize_resource
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  ### Load_and_authorize_resource no soporte strong parameters.
+  skip_load_resource :only => [:create]
 
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+   # @users = User.all
   end
 
   # GET /users/1
