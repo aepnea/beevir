@@ -29,13 +29,15 @@ Cliente.create([{razon_social: '1 Test - Iculo SA', nombre: 'Test-iculo', rut: '
 
 # Creando usuario dios
 
-user1 = User.create! nombre:'admin', apellido1:'admin', apellido2:'admin', rut:'15119027-8', fono:'72101837', email:"admin@beevir.com", password:'password', cliente_id: '1'
-user1.add_role "admin"
-user1 = User.create! nombre:'copropietario', apellido1:'copropietario', apellido2:'copropietario', rut:'15119027-8', fono:'72101837', email:"copropietario@beevir.com", password:'password', cliente_id: '1'
-user1.add_role "copropietario"
-user1 = User.create! nombre:'copropietario_residente', apellido1:'copropietario_residente', apellido2:'copropietario_residente', rut:'15119027-8', fono:'72101837', email:"copropietario_residente@beevir.com", password:'password', cliente_id: '1'
-user1.add_role "copropietario_residente"
-user1 = User.create! nombre:'arrendatario', apellido1:'arrendatario', apellido2:'arrendatario', rut:'15119027-8', fono:'72101837', email:"arrendatario@beevir.com", password:'password', cliente_id: '1'
-user1.add_role "arrendatario"
-user1 = User.create! nombre:'comite', apellido1:'comite', apellido2:'comite', rut:'15119027-8', fono:'72101837', email:"comite@beevir.com", password:'password', cliente_id: '1'
-user1.add_role "comite"
+user = User.create! nombre:'admin', apellido1:'admin', apellido2:'admin', rut:'15119027-8', fono:'72101837', email:"admin@beevir.com", password:'password', cliente_id: '1'
+user.add_role "admin"
+user = User.create! nombre:'copropietario', apellido1:'copropietario', apellido2:'copropietario', rut:'15119027-8', fono:'72101837', email:"copropietario@beevir.com", password:'password', cliente_id: '1'
+user.add_role "copropietario"
+user = User.create! nombre:'copropietario_residente', apellido1:'copropietario_residente', apellido2:'copropietario_residente', rut:'15119027-8', fono:'72101837', email:"copropietario_residente@beevir.com", password:'password', cliente_id: '1'
+user.add_role "copropietario_residente"
+user = User.create! nombre:'arrendatario', apellido1:'arrendatario', apellido2:'arrendatario', rut:'15119027-8', fono:'72101837', email:"arrendatario@beevir.com", password:'password', cliente_id: '1'
+user.add_role "arrendatario"
+user = User.create! nombre:'comite', apellido1:'comite', apellido2:'comite', rut:'15119027-8', fono:'72101837', email:"comite@beevir.com", password:'password', cliente_id: '1'
+user.add_role "comite"
+user = User.create! nombre:'dios', apellido1:'', apellido2:'', rut:'15119027-8', fono:'72101837', email:"dios@beevir.com", password:'password', cliente_id: '1'
+user.add_role "dios"

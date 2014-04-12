@@ -1,0 +1,41 @@
+<h1>Listing users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido1</th>
+      <th>Apellido2</th>
+      <th>Rut</th>
+      <th>Fono</th>
+      <th>Email</th>
+      <th>Cliente</th>
+      <th>Role</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |dios| %>
+      <tr>
+        <td><%= dios.nombre %></td>
+        <td><%= dios.apellido1 %></td>
+        <td><%= dios.apellido2 %></td>
+        <td><%= dios.rut %></td>
+        <td><%= dios.fono %></td>
+        <td><%= dios.email %></td>
+        <td><%= dios.cliente_id %></td>
+        <td><%= dios.role_ids %></td>
+        <td><%= link_to 'Show', dios_path(dios) %></td>
+        <td><%= link_to 'Edit', edit_dios_path(dios) %></td>
+        <td><%= link_to 'Destroy', dios, method: :delete, data: { confirm: 'Estas Seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New user', new_dios_path %>

@@ -7,7 +7,9 @@ class ApplicationController < ActionController::Base
 
 
   def after_sign_in_path_for(resource_or_scope)
-  	if current_user.has_role? :admin
+  	if current_user.has_role? :dios
+        "/dios/"
+    elsif current_user.has_role? :admin
         "/admin/index"        
     elsif current_user.has_role? :copropietario
          "/comunidad/logout"

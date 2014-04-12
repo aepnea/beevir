@@ -5,6 +5,8 @@ Beevir::Application.routes.draw do
 
 
 
+  get "dios/index"
+  resources :dios
   resources :clientes
   resources :regiones
   resources :users

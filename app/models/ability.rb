@@ -5,7 +5,12 @@ class Ability
     # Define abilities for the passed in user here. For example:
     #
      user ||= User.new # guest user (not logged in)
-      if user.has_role? :admin
+      if user.has_role? :dios
+        can :manage, :dios
+        can :manage, User
+        can :manage, Cliente
+        can :manage, Region
+      elsif user.has_role? :admin
         if user.has_role? :copropietario ## Validando si es admin y copropietario a la vez.
           can :manage, Comunidad
           can :manage, Admin
