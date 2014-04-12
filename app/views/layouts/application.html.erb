@@ -8,7 +8,7 @@
 <% if user_signed_in? %>
 	<%if current_user.has_role? :dios %>
 		<h2>"Un gran poder, lleva una gran responsabilidad"</h2>
-		<%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
+		<%= link_to 'Usuarios', dios_index_path %>     <%= link_to 'Clientes', clientes_path %>      <%= link_to 'Regiones', regiones_path %>    <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
 	<%else%>								
   Eres <%= current_user.nombre %> <%=  current_user.apellido1 %>  <%=  current_user.apellido2 %>  <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
   <%end%>
