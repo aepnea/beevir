@@ -5,6 +5,20 @@ Beevir::Application.routes.draw do
 
 
 
+  resources :comunidades_users
+
+  resources :users_unidades
+
+  resources :unidades
+
+  resources :espacios_comunes
+
+  resources :sectores
+
+  resources :comunidades
+
+  resources :tipo_unidades
+
   get "dios/index"
   resources :dios
   resources :clientes

@@ -27,10 +27,24 @@ Region.create([{nombre: 'Región de Arica y Parinacota', numero: 'XV'}, \
 Cliente.create([{razon_social: 'Beevir SpA', nombre: 'Beevir', rut: '15119027-8', direccion: 'German Riesco 430', email: 'contacto@beevir.com', telefono: '72101837', nombre_contacto: 'Cristian Vasquez', region_id: '8'}])
 Cliente.create([{razon_social: '1 Test - Iculo SA', nombre: 'Test-iculo', rut: '15119027-8', direccion: 'German Riesco 430', email: 'contacto@testiculo.com', telefono: '72101837', nombre_contacto: 'Memo Lestaelano', region_id: '10'}])
 
-# Creando usuario dios
+# poblando tipo unidades
+TipoUnidad.create([{nombre: 'casa'}, \
+                   {nombre: 'departamento'}, \
+                   {nombre: 'parcela'}, \
+                   {nombre: 'bodega'}, \
+                   {nombre: 'estacionamiento'}])
 
-user = User.create! nombre:'admin', apellido1:'admin', apellido2:'admin', rut:'15119027-8', fono:'72101837', email:"admin@beevir.com", password:'password', cliente_id: '1'
+
+#Creando usuarios de pruebas
+
+user = User.create! nombre:'admin1', apellido1:'admin1', apellido2:'admin1', rut:'15119027-8', fono:'72101837', email:"admin1@beevir.com", password:'password', cliente_id: '1'
 user.add_role "admin"
+user = User.create! nombre:'admin2', apellido1:'admin2', apellido2:'admin2', rut:'15119027-8', fono:'72101837', email:"admin2@beevir.com", password:'password', cliente_id: '2'
+user.add_role "admin"
+user = User.create! nombre:'admin3', apellido1:'admin3', apellido2:'admin3', rut:'15119027-8', fono:'72101837', email:"admin3@beevir.com", password:'password', cliente_id: '2'
+user.add_role "admin"
+
+
 user = User.create! nombre:'copropietario', apellido1:'copropietario', apellido2:'copropietario', rut:'15119027-8', fono:'72101837', email:"copropietario@beevir.com", password:'password', cliente_id: '1'
 user.add_role "copropietario"
 user = User.create! nombre:'copropietario_residente', apellido1:'copropietario_residente', apellido2:'copropietario_residente', rut:'15119027-8', fono:'72101837', email:"copropietario_residente@beevir.com", password:'password', cliente_id: '1'
@@ -39,5 +53,17 @@ user = User.create! nombre:'arrendatario', apellido1:'arrendatario', apellido2:'
 user.add_role "arrendatario"
 user = User.create! nombre:'comite', apellido1:'comite', apellido2:'comite', rut:'15119027-8', fono:'72101837', email:"comite@beevir.com", password:'password', cliente_id: '1'
 user.add_role "comite"
+
+# Creando usuario dios
+
 user = User.create! nombre:'dios', apellido1:'', apellido2:'', rut:'15119027-8', fono:'72101837', email:"dios@beevir.com", password:'password', cliente_id: '1'
 user.add_role "dios"
+
+
+
+# Creando comunidad
+Comunidad.create([{nombre: 'crimawa', direccion: 'german riesco 430', ciudad: 'curacavi', region_id:'5', tipo_unidad_id: '2', user_id: '1', cliente_id: '1'}, \
+					{nombre: 'cona', direccion: 'osvaldo castillo', ciudad: 'sn fdo', region_id:'7', tipo_unidad_id: '1', user_id: '1', cliente_id: '1'}, \
+					{nombre: 'caballeros', direccion: 'heriberto soto', ciudad: 'sn fdo', region_id:'7', tipo_unidad_id: '1', user_id: '1', cliente_id: '2'}, \
+					{nombre: 'del anillo', direccion: ' miembrillar', ciudad: 'sn fdo', region_id:'7', tipo_unidad_id: '1', user_id: '1', cliente_id: '2'}])
+

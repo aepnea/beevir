@@ -18,6 +18,8 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+    @role = Role.where("name <> 'dios'")
+    @cliente = current_user.cliente_id 
   end
 
   # GET /users/1/edit

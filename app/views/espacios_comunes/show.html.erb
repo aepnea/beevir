@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Espacio comun:</strong>
+  <%= @espacio_comun.espacio_comun %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @espacio_comun.descripcion %>
+</p>
+
+<p>
+  <strong>Reglamento:</strong>
+  <%= @espacio_comun.reglamento %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @espacio_comun.precio %>
+</p>
+
+<p>
+  <strong>Foto:</strong>
+  <%= @espacio_comun.foto %>
+</p>
+
+<p>
+  <strong>Comunidad:</strong>
+  <%= @espacio_comun.comunidad_id %>
+</p>
+
+<%= link_to 'Edit', edit_espacio_comun_path(@espacio_comun) %> |
+<%= link_to 'Back', espacios_comunes_path %>

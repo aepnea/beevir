@@ -17,6 +17,11 @@ class Ability
         end
          can :manage, Admin
          can :manage, User
+         can :manage, Comunidad
+         can :manage, EspacioComun
+         can :manage, Sector
+         can :manage, TipoUnidad
+         can :manage, Unidad
       elsif user.has_role? :copropietario
          can :manage, Comunidad #aca tengo que poner a los modelos a los cuales tendra acceso.
       elsif user.has_role? :arrendatario

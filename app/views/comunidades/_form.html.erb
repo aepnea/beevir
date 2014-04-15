@@ -1,0 +1,44 @@
+<%= form_for(@comunidad) do |f| %>
+  <% if @comunidad.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@comunidad.errors.count, "error") %> prohibited this comunidad from being saved:</h2>
+
+      <ul>
+      <% @comunidad.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :direccion %><br>
+    <%= f.text_field :direccion %>
+  </div>
+  <div class="field">
+    <%= f.label :ciudad %><br>
+    <%= f.text_field :ciudad %>
+  </div>
+  <div class="field">
+    <%= f.label :region_id %><br>
+    <%= f.collection_select :region_id, Region.all, :id, :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :tipo_unidad_id %><br>
+    <%= f.collection_select :tipo_unidad_id, TipoUnidad.all, :id, :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.collection_select :user_id, @admin, :id, :nombre %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :cliente_id, :value => @cliente %><br>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
