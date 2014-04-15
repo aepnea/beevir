@@ -20,7 +20,7 @@ class ComunidadesUsersController < ApplicationController
     @comunidades = Comunidad.where(cliente_id: cliente)
 
     user = User.where(cliente_id: cliente)
-    @user = user.with_any_role(:copropietario, :arrendatario, :copropietario_residente, :comite)
+    @user = user.with_role(:admin)
   end
 
   # GET /comunidades_users/1/edit

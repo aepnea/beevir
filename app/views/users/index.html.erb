@@ -18,9 +18,8 @@
   </thead>
 
   <tbody>
-    <% current = current_user.cliente_id %>
-    <% users = User.where(cliente_id: current) %>
-    <% users.each do |usuario| %>
+
+    <% @users.each do |usuario| %>
       <tr>
         <td><%= usuario.nombre %></td>
         <td><%= usuario.apellido1 %></td>

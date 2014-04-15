@@ -15,7 +15,7 @@
     <%= f.label :comunidad_id %><br>
     <%= f.collection_select :comunidad_id, @comunidades, :id, :nombre %>
   </div>
-  <h3>Escoja residente</h3>
+  <h3>Escoja administrador</h3>
   <div class="field">
     <% @user.each do |user| %>
         <%= check_box_tag 'user_ids[]', user.id %>
