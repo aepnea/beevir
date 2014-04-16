@@ -1,27 +1,13 @@
-// window.onload = function(){
-// 	alert('hola')
-// };
-
-
-$(function(){
-	$('.listar').on('click', mostrar);
-	function mostrar(){
-		$('.listaComunidades').slideToggle();
-	}
-});
 $(function(){
 	$('.formulario').hide();
-	$('.ancla').on('click', mostrar);
+	$('.entrar').on('click', mostrar);
 	function mostrar(){
-		$('.formulario').slideToggle("slow");
+		$('.formulario').slideToggle();
 	}
 });
 
-$(".ancla").click(function(){
-	event.preventDefault();
-	var vinculo = $(this).attr("href")
-	var destino = $(vinculo).offset().top - 100;
-	
-$("html:not(:animated), body:not(:animated)").animate({scrollTop:destino}, 800)
-	return false
-})
+$(".entrar").click(function() {
+    $('html, body').animate({
+        scrollTop: $(".formito").offset().top
+    }, 1000);
+});
