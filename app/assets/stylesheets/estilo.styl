@@ -1,0 +1,702 @@
+@import 'nib'
+@import 'nib/gradients'
+
+gris = #999
+grisOscuro = #666
+naranjo = #FFAA00
+verdeClaro = #95C11F
+verdeOscuro = #3AAA35
+foo = margin-left 1em
+
+body
+	background #EEE
+	font-family 'Open Sans', sans-serif
+	font-size 18px
+
+h1
+h2
+h3
+h4
+	color grisOscuro
+	font-weight 300
+
+footer
+	color #EEE
+	background grisOscuro
+	padding 2em 0
+	text-align center
+	width 100%
+
+header
+	.fondito
+		background radial-gradient(bottom, verdeClaro, verdeOscuro)
+		overflow hidden
+		padding 0 0 5em 0
+		.figHome
+			padding 0
+			margin 0 auto
+			width 280px
+			img
+				margin 3em auto
+				width 100%
+		.h3
+			margin 2em auto
+			h3
+				color #EEE
+				margin 0
+				padding 0
+				text-align center
+		button
+			background #EEE
+			border 0
+			border-radius .3em
+			display block
+			margin 0 auto
+			text-align center
+			a
+				color verdeClaro
+				padding .4em 2em
+				text-decoration none
+		.p
+			margin 2em auto
+			p
+				color #EEE
+				font-style italic
+				margin 0
+				padding 0
+				text-align center
+		form
+			display block
+			margin 2em auto
+			width 310px
+			input
+				border 0
+				border-radius .2em
+				padding-left 1em
+			input
+			button
+				display inline-block
+				vertical-align top
+			button
+				height 26px
+				margin 0
+				padding 0
+				text-align center
+				width 40px
+				&:after
+					content ''
+	.formulario
+		background naranjo
+		padding 0 0 4em 0
+		.contiene
+			margin 0 auto
+			overflow hidden
+			padding 2em
+			width 400px
+			form
+				input
+					border-radius .3em
+					margin 1em auto
+					padding-left 1em
+					width 95%
+				#user_remember_me
+
+					width 40px
+				#user_remember_me
+				label
+				a
+					float left
+					margin 1em
+					display inline-block
+					vertical-align middle
+				label
+				a
+					color #EEE					
+					font-size .8em
+					margin
+				.signIn
+					float right
+					width 200px
+					input
+						background #EEE
+						border 0
+						border-radius .3em
+						color verdeClaro
+						display block
+						margin 0 auto
+						padding .3em 2em
+						text-align center
+	.headerInt
+		border-bottom 1px solid verdeClaro
+		height 75px
+		overflow hidden
+		.figInterno
+			background radial-gradient(bottom, verdeClaro, verdeOscuro)
+			height 75px
+			overflow hidden
+			position relative
+			width 320px
+			&:before
+				border-bottom 38px solid white
+				border-left 15px solid transparent
+				border-right 15px solid white
+				border-top 38px solid transparent
+				content ""
+				position absolute
+				right 0
+				top 0
+
+			img
+				margin 8px auto auto 40px
+		.figInterno
+		.navInterno
+		.loginInterno
+			display inline-block
+			vertical-align middle
+		.navInterno
+			float right
+			ul
+				padding 0
+				li
+					display inline-block
+					padding .5em 2em
+
+					a
+						color gris
+						text-decoration none
+						text-transform capitalize
+						&:hover
+							text-decoration underline
+		.loginInterno
+			float right
+			overflow hidden
+			
+			a
+				background naranjo
+				color white
+				display inline-block
+				font-size 16px
+				padding 1.8em 1em
+				&:hover
+					background rgba(naranjo, .75)
+section
+	margin 0 auto
+	position relative
+	.contenendor
+		margin 0
+		display block
+		text-align center
+		width 100%
+	.comunidades
+		background verdeClaro
+		position relative
+		width 440px
+		.listar
+			background white
+			border 1px solid verdeOscuro
+			cursor pointer
+			left -40px
+			position relative
+			width 480px
+			z-index 2
+
+			figure
+				padding .3em
+				width 40px
+				img
+					width 100%
+
+			figure
+			p
+				display inline-block
+				margin 0 0 0 2em
+				vertical-align middle
+
+			p
+				color gris
+				font-size 1.3em
+				padding 0
+				width 320px
+
+		.listaComunidades
+			background verdeClaro
+			display none
+			margin 0
+			position relative
+			width 440px
+			z-index 1
+			ul
+				margin 0
+				padding 1em
+				li
+					color white
+					font-size 1.4em
+					list-style none
+					margin 0 0 0 .5em
+					padding 0
+					text-align center
+					width 320px
+					a
+						color white
+						&:hover
+							color verdeOscuro
+
+	.seleccion
+		margin 2em 0
+		overflow hidden
+		position relative
+		ul
+			margin 0
+			padding 0
+			li
+				border 1px solid verdeClaro
+				display inline-block
+				float left
+				font-size 1.3em
+				height 50px
+				padding .8em 0
+				text-align center
+				width 33%
+				a
+					color gris
+					text-decoration none
+					&:hover
+						color naranjo
+						text-decoration underline
+
+	.cuentas
+		border 1px solid naranjo
+		border-radius .5em
+		float left
+		margin 1em 1em 0 0
+		padding .5em 1em
+		position relative
+		width 35%
+		ul
+			li
+				list-style none
+				a
+					color gris
+					&:hover
+						color naranjo
+
+	.configResidencial
+		border 1px solid naranjo
+		border-radius .5em
+		float left
+		margin 1em 1em 0 0
+		padding .5em 1em
+		position relative
+		width 35%
+		ul
+			li
+				list-style none
+				a
+					color gris
+					&:hover
+						color naranjo
+
+	.configYotros
+		border 1px solid naranjo
+		border-radius .5em
+		float left
+		margin 1em 1em 0 0
+		padding .5em 1em
+		position relative
+		width 35%
+		a
+			text-decoration none
+			&:hover
+				text-decoration underline
+		ul
+			li
+				list-style none
+				a
+					color gris
+					&:hover
+						color naranjo
+
+
+
+.ch-grid
+	display block
+	list-style none
+	margin 0
+	padding 0
+	text-align center
+	width 100%
+	&:after
+		content ''
+		display table
+	&:after
+		clear both
+	li
+		display inline-block
+		margin 0 100px
+		.descrip
+			float left
+			width 180px
+			p
+				color gris
+				font-size .9em
+		.mas
+			background #EEE
+			cursor pointer
+			height 120px
+			margin 0
+			position relative
+			top -2em
+			width 180px
+			z-index 1
+			&:after
+					border-left 90px solid transparent
+					border-right 90px solid transparent
+					border-top 45px solid #EEE
+					bottom -45px
+					content ""
+					height 0
+					left 0
+					position absolute
+					width 0
+					z-index -2
+				&:before
+					border-bottom 45px solid #EEE
+					border-left 90px solid transparent
+					border-right 90px solid transparent
+					content ""
+					display table
+					height 0
+					left 0
+					position absolute
+					top -45px
+					width 0
+			.ch-item
+				background verdeClaro
+				display inline-block
+				height 100px
+				margin 0
+				position relative
+				top .5em
+				width 160px
+				&:after
+					border-left 80px solid transparent
+					border-right 80px solid transparent
+					border-top 40px solid verdeClaro
+					bottom -40px
+					content ""
+					height 0
+					left 0
+					position absolute
+					width 0
+					z-index -1
+				&:before
+					border-bottom 40px solid verdeClaro
+					border-left 80px solid transparent
+					border-right 80px solid transparent
+					content ""
+					display table
+					height 0
+					left 0
+					position absolute
+					top -40px
+					width 0
+			.masmas
+				background rgba(white, .3)
+				display inline-block
+				height 80px
+				margin 0
+				padding 0
+				position relative
+				top 10px
+				width 126px
+				&:after
+					border-left 63px solid transparent
+					border-right 63px solid transparent
+					border-top 30px solid rgba(white, .3)
+					bottom -30px
+					content ""
+					height 0
+					left 0
+					position absolute
+					width 0
+				&:before
+					border-bottom 30px solid rgba(white, .3)
+					border-left 63px solid transparent
+					border-right 63px solid transparent
+					content ""
+					display table
+					height 0
+					left 0
+					position absolute
+					top -30px
+					width 0
+				p
+					color #EEE
+				
+.color1
+	background rgba(verdeOscuro, .7)
+.ch-info
+	backface-visibility hidden
+	height inherit
+	opacity 0
+	position absolute
+	top 0
+	transform scale(0)
+	transition all 0.4s ease-in-out
+	width inherit
+	&:after
+		border-left 80px solid transparent
+		border-right 80px solid transparent
+		border-top 40px solid rgba(verdeOscuro, .7)
+		bottom -40px
+		content ""
+		height 0
+		left 0
+		position absolute
+		width 0
+	&:before
+		border-bottom 40px solid rgba(verdeOscuro, .7)
+		border-left 80px solid transparent
+		border-right 80px solid transparent
+		content ""
+		display table
+		height 0
+		left 0
+		position absolute
+		top -40px
+		width 0
+	h3
+		color #fff
+		font-family 'Open Sans', sans-serif
+		font-size 1.1em
+		margin 1em auto 0 auto
+		padding 0
+		text-shadow 0 1px 2px rgba(0,0,0,0.3)
+		text-transform uppercase
+	p
+		border-top 1px solid rgba(255,255,255,0.5)
+		color #fff
+		cursor pointer
+		font-size .9em
+		font-style italic
+		margin 0 30px
+		opacity 0
+		padding 0
+		&:hover
+			color rgba(naranjo, 0.8)
+.ch-item:hover .ch-info
+	opacity 1
+	transform scale(1)
+
+.ch-item:hover .ch-info p
+	opacity: 1
+
+
+@media (max-width: 1024px)
+
+	h2
+		font-size 1.3em
+	header
+		overflow visible
+		.headerInt
+			.navInterno
+				background naranjo
+				float right
+				height 60px
+				position absolute
+				right 0
+				top 75px
+				width 100%
+				&:after
+					background white
+					content ""
+					height 75px
+					position absolute
+					width 290px
+				&:before
+					border-bottom 38px solid white
+					border-left 15px solid white
+					border-right 15px solid transparent
+					border-top 38px solid transparent
+					content ""
+					position absolute
+					left 290px
+					top 0
+				ul
+					float right
+
+					li
+						font-size .8em
+						padding .1em 1.2em
+
+						a
+							color white
+			.loginInterno
+				float right
+				position absolute
+				right 0			
+				a
+					background none
+					color naranjo
+					display inline-block
+					font-size 16px
+					padding 1.8em 1em
+					&:hover
+						background rgba(naranjo, .75)
+
+	section
+		margin 5em 40px auto 40px
+		.seleccion
+			ul
+				margin 0
+				padding 0
+				li
+					background verdeClaro
+					border 1px solid white
+					font-size .9em
+					a
+						color white
+						&:hover
+							color verdeOscuro
+		.configResidencial
+			float right
+		.configResidencial
+		.cuentas
+			border none
+			margin 0
+			padding 0
+			width 49%
+			ul
+				padding 0
+				li
+					list-style none
+					a
+						color gris
+						font-size .9em
+						&:hover
+							color naranjo
+		.configYotros
+			display block
+			margin 2em auto
+			text-align center
+			width 90%
+			ul
+				padding 0
+
+
+@media (max-width: 700px)
+	h2
+	h3
+		color naranjo
+	section
+		.seleccion
+			ul
+				li
+					width 49%	
+
+@media (max-width: 630px)
+	header
+		.headerInt
+			padding 0
+			.figInterno
+				display block
+				text-align center
+				width 100%
+				&:before
+					display none
+					content ""
+			.navInterno
+				float none
+				position absolute
+				text-align center
+				top 150px
+				width 100%
+				&:after
+					display none
+				&:before
+					display none			
+				ul
+					float none
+					padding 0
+					li
+						padding .1em auto
+						a
+							color white
+							font-size .8em
+			.loginInterno
+				display block
+				text-align center
+				width 100%	
+				a
+					display block
+					&:hover
+						background rgba(verdeClaro, .2)
+	section
+		margin 8em auto
+		h1
+			margin 1em auto
+			display block
+			font-size 1.5em
+			text-align center
+			width 100%
+		.comunidades
+			background verdeClaro
+			position relative
+			width 100%
+			.listar
+				border-left none
+				border-right none
+				border-bottom 1px solid verdeOscuro
+				border-top 1px solid verdeOscuro
+				left 0
+				width 100%
+				figure
+					margin 0 0 0 .5em
+					width 25px
+					img
+						width 100%
+				figure
+				p
+					display inline-block
+					vertical-align middle
+				p
+					font-size 1em
+					margin 0
+					text-align center
+					width 80%
+			.listaComunidades
+				width 100%
+				ul
+					padding .7em 0
+					li
+						font-size 1em
+						list-style none
+						margin 0
+						padding 0
+						text-align center
+						width 100%
+		.seleccion
+			ul
+				margin 0
+				padding 0
+				li
+					background verdeClaro
+					border 1px solid white
+					font-size .9em
+					width 49%
+					a
+						color white
+						&:hover
+							color verdeOscuro
+		.configResidencial
+		.cuentas
+			margin-left 5%
+			width 94%
+
+		.configYotros
+			border-left none
+			border-right none
+			padding 0
+			width 100%
+			ul
+				padding 0
