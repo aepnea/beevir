@@ -13,11 +13,12 @@ $(function(){
 	$('.formulario').hide();
 	$('.ancla').on('click', mostrar);
 	function mostrar(){
-		$('.formulario').slideToggle();
+		$('.formulario').slideToggle("slow");
 	}
 });
 
 $(".ancla").click(function(){
+	event.preventDefault();
 	var vinculo = $(this).attr("href")
 	var destino = $(vinculo).offset().top - 100;
 	
