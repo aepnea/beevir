@@ -15,6 +15,14 @@ Beevir::Application.routes.draw do
     get "comunidad/comunidad"
  
   devise_for :users, :skip =>[:registrations, :sessions]
+  devise_scope :user do
+    authenticated :user do
+      root :to => 'devise/sessions#new', as: :authenticated_root
+    end
+    unauthenticated :user do
+      root :to => 'devise/sessions#new', as: :unauthenticated_root
+    end
+  end
 
 
   as :user do 
@@ -26,7 +34,7 @@ Beevir::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+   root 'devise/sessions#new'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
