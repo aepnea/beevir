@@ -1,3 +1,4 @@
+
 $(function(){
 	$('.formulario').hide();
 	$('.entrar').on('click', mostrar);
@@ -7,7 +8,8 @@ $(function(){
 });
 
 $(".entrar").click(function() {
+
     $('html, body').animate({
-        scrollTop: $(".formito").offset().top
-    }, 1000);
+		scrollTop: $(".formito").offset().top
+	},1000);
 });
