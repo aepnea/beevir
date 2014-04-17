@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140326155623) do
+ActiveRecord::Schema.define(version: 20140414035708) do
 
   create_table "clientes", force: true do |t|
     t.string   "razon_social"
@@ -22,6 +22,36 @@ ActiveRecord::Schema.define(version: 20140326155623) do
     t.string   "telefono"
     t.string   "nombre_contacto"
     t.integer  "region_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "comunidades", force: true do |t|
+    t.string   "nombre"
+    t.string   "direccion"
+    t.string   "ciudad"
+    t.integer  "region_id"
+    t.integer  "tipo_unidad_id"
+    t.integer  "user_id"
+    t.integer  "cliente_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "comunidades_users", force: true do |t|
+    t.integer  "comunidad_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "espacios_comunes", force: true do |t|
+    t.string   "espacio_comun"
+    t.text     "descripcion"
+    t.text     "reglamento"
+    t.decimal  "precio",        precision: 10, scale: 0
+    t.binary   "foto"
+    t.integer  "comunidad_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -43,6 +73,29 @@ ActiveRecord::Schema.define(version: 20140326155623) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id", using: :btree
   add_index "roles", ["name"], name: "index_roles_on_name", using: :btree
+
+  create_table "sectores", force: true do |t|
+    t.string   "nombre"
+    t.integer  "comunidad_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tipo_unidades", force: true do |t|
+    t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "unidades", force: true do |t|
+    t.integer  "numero"
+    t.integer  "mt2"
+    t.boolean  "busy"
+    t.integer  "sector_id"
+    t.integer  "comunidad_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -74,5 +127,12 @@ ActiveRecord::Schema.define(version: 20140326155623) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
+
+  create_table "users_unidades", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "unidad_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

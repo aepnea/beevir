@@ -8,6 +8,13 @@
  	inflect.irregular 'region', 'regiones'
  	inflect.irregular 'usuario', 'usuarios'
 	inflect.irregular 'dios', 'dios'
+	inflect.irregular 'comunidad', 'comunidades'
+	inflect.irregular 'espacio_comun', 'espacios_comunes'	 
+    inflect.irregular 'sector', 'sectores'
+	inflect.irregular 'tipo_unidad', 'tipo_unidades'
+	inflect.irregular 'unidad', 'unidades'
+	inflect.irregular 'user_unidad', 'users_unidades'
+	inflect.irregular 'comunidad_user', 'comunidades_users'
  end
 #   inflect.plural /^(ox)$/i, '\1en'
 #   inflect.singular /^(ox)en/i, '\1'

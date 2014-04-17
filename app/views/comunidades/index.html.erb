@@ -1,0 +1,37 @@
+<h1>Listing comunidades</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Direccion</th>
+      <th>Ciudad</th>
+      <th>Region</th>
+      <th>Tipo unidad</th>
+      <th>User</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @comunidades.each do |comunidad| %>
+      <tr>
+        <td><%= comunidad.nombre %></td>
+        <td><%= comunidad.direccion %></td>
+        <td><%= comunidad.ciudad %></td>
+        <td><%= comunidad.region_id %></td>
+        <td><%= comunidad.tipo_unidad_id %></td>
+        <td><%= comunidad.user.nombre %></td>
+        <td><%= link_to 'Show', comunidad %></td>
+        <td><%= link_to 'Edit', edit_comunidad_path(comunidad) %></td>
+        <td><%= link_to 'Destroy', comunidad, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Comunidad', new_comunidad_path %>

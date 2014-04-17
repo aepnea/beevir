@@ -1,0 +1,37 @@
+<h1>Listing espacios_comunes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Espacio comun</th>
+      <th>Descripcion</th>
+      <th>Reglamento</th>
+      <th>Precio</th>
+      <th>Foto</th>
+      <th>Comunidad</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @espacios_comunes.each do |espacio_comun| %>
+      <tr>
+        <td><%= espacio_comun.espacio_comun %></td>
+        <td><%= espacio_comun.descripcion %></td>
+        <td><%= espacio_comun.reglamento %></td>
+        <td><%= espacio_comun.precio %></td>
+        <td><%= espacio_comun.foto %></td>
+        <td><%= espacio_comun.comunidad_id %></td>
+        <td><%= link_to 'Show', espacio_comun %></td>
+        <td><%= link_to 'Edit', edit_espacio_comun_path(espacio_comun) %></td>
+        <td><%= link_to 'Destroy', espacio_comun, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Espacio comun', new_espacio_comun_path %>

@@ -45,17 +45,16 @@
   <div class="field">
       <%= f.label :roles_ids %>
       <div class="controls">
-        <% Role.where("name <> 'dios'").each do |role| %>
+        <% @role.each do |role| %>
           <%= check_box_tag "user[role_ids][]", role.id, @user.role_ids.include?(role.id) %>
-          <%= role.name %><br />
+          <%= role.name %><br/>
         <% end %>
       </div>
     </div>
 
 
   <div class="field">
-    <% cliente = current_user.cliente_id %>
-    <%= f.hidden_field :cliente_id, :value => cliente %><br>
+    <%= f.hidden_field :cliente_id, :value => @cliente %><br>
   </div>
   <div class="actions">
     <%= f.submit %>

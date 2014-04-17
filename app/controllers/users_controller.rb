@@ -7,7 +7,9 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-   # @users = User.all
+    cliente = current_user.cliente
+    users = User.where(cliente_id: cliente)
+    @users = users.with_any_role(:copropietario, :admin, :copropietario_residente, :comite, :arrendatario)
   end
 
   # GET /users/1
@@ -18,6 +20,10 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+    @role = Role.where("name <> 'dios'")
+    @cliente = current_user.cliente_id 
+
+
   end
 
   # GET /users/1/edit

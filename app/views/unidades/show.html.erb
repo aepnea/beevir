@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Numero:</strong>
+  <%= @unidad.numero %>
+</p>
+
+<p>
+  <strong>Mt2:</strong>
+  <%= @unidad.mt2 %>
+</p>
+
+<p>
+  <strong>Busy:</strong>
+  <%= @unidad.busy %>
+</p>
+
+<p>
+  <strong>Sector:</strong>
+  <%= @unidad.sector_id %>
+</p>
+
+<p>
+  <strong>Comunidad:</strong>
+  <%= @unidad.comunidad_id %>
+</p>
+
+<%= link_to 'Edit', edit_unidad_path(@unidad) %> |
+<%= link_to 'Back', unidades_path %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  espacio_comun: MyString
+  descripcion: MyText
+  reglamento: MyText
+  precio: 9.99
+  foto: 
+  comunidad_id: 1
+
+two:
+  espacio_comun: MyString
+  descripcion: MyText
+  reglamento: MyText
+  precio: 9.99
+  foto: 
+  comunidad_id: 1
