@@ -13,7 +13,9 @@ development:
   encoding: utf8
   database: beevir_d
   username: root
-  password: "rrff4646"
+  password: "Beevir.01"
+  host: 127.0.0.1
+
   socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -25,7 +27,8 @@ test:
   database: beevir_te
   pool: 5
   username: root
-  password: "rrff4646"
+  password: "Beevir.01"
+  host: 127.0.0.1
   socket: /var/run/mysqld/mysqld.sock
 
 production:
@@ -34,5 +37,7 @@ production:
   database: beevir_p
   pool: 5
   username: root
-  password: "rrff4646"
+  password: "Beevir.01"
   socket: /var/run/mysqld/mysqld.sock
+host: 127.0.0.1
+

@@ -7,7 +7,9 @@ class SectoresController < ApplicationController
   # GET /sectores
   # GET /sectores.json
   def index
-    @sectores = Sector.all
+  	cliente = current_user.cliente_id
+  	@sectores = Sector.all(:joins => :comunidad, :conditions => { :comunidades => {:cliente_id => cliente}})
+  
   end
 
   # GET /sectores/1
@@ -18,6 +20,8 @@ class SectoresController < ApplicationController
   # GET /sectores/new
   def new
     @sector = Sector.new
+    cliente = current_user.cliente_id
+    @comunidades = Comunidad.where(cliente_id: cliente)
   end
 
   # GET /sectores/1/edit
