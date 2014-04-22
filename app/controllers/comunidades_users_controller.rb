@@ -4,7 +4,8 @@ class ComunidadesUsersController < ApplicationController
   # GET /comunidades_users
   # GET /comunidades_users.json
   def index
-    @comunidades_users = ComunidadUser.all
+  	cliente = current_user.cliente_id
+    @comunidades_users = ComunidadUser.all(:joins => :user, :conditions => { :users => {:cliente_id => cliente}})
   end
 
   # GET /comunidades_users/1

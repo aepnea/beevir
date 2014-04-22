@@ -15,6 +15,8 @@ class UsersUnidadesController < ApplicationController
   # GET /users_unidades/new
   def new
     @user_unidad = UserUnidad.new
+    cliente = current_user.cliente_id
+    
   end
 
   # GET /users_unidades/1/edit
@@ -69,6 +71,6 @@ class UsersUnidadesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_unidad_params
-      params.require(:user_unidad).permit(:user_id, :unidad_id)
+      params.require(:user_unidad).permit(:unidad_id, :user_ids => [])
     end
 end

@@ -25,11 +25,11 @@
   </div>
   <div class="field">
     <%= f.label :sector_id %><br>
-    <%= f.number_field :sector_id %>
+    <%= f.collection_select :sector_id, @sector, :id, :nombre %>
   </div>
   <div class="field">
     <%= f.label :comunidad_id %><br>
-    <%= f.number_field :comunidad_id %>
+    <%= f.collection_select :comunidad_id, @comunidad, :id, :nombre %>
   </div>
   <div class="actions">
     <%= f.submit %>

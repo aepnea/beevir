@@ -7,7 +7,9 @@ class UnidadesController < ApplicationController
   # GET /unidades
   # GET /unidades.json
   def index
-    @unidades = Unidad.all
+  	cliente = current_user.cliente_id
+    @unidades = Unidad.all(:joins => :comunidad, :conditions => { :comunidades => {:cliente_id => cliente}})
+    
   end
 
   # GET /unidades/1
@@ -18,6 +20,9 @@ class UnidadesController < ApplicationController
   # GET /unidades/new
   def new
     @unidad = Unidad.new
+    cliente = current_user.cliente_id
+    @sector = Sector.all(:joins => :comunidad, :conditions => { :comunidades => {:cliente_id => cliente}})
+    @comunidad = Comunidad.where(cliente_id: cliente)
   end
 
   # GET /unidades/1/edit
