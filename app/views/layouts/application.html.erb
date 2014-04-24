@@ -8,13 +8,13 @@
 
 </head>
 <body>
+	<%= yield %>
 
-<%= yield %>
+	<div id='footer'>
+        <%= render :partial => 'layouts/footer' %>
+        <%= yield :footer %>
+	</div>
 
-
-	<footer>
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, deserunt, modi
-	</footer>
 <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	
 </body>

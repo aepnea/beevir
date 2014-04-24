@@ -1,5 +1,5 @@
 class DiosController < ApplicationController
-  before_filter(:only => [:index, :new, :show, :edit, :create, :udpdate, :destroy]) { unauthorized! if cannot? :manage, :dios}
+  before_filter(:authenticate_user!, :only => [:index, :new, :show, :edit, :create, :udpdate, :destroy]) { authorize! if cannot? :manage, :dios}
   #load_and_authorize_resource
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   ### Load_and_authorize_resource no soporta strong parameters.
