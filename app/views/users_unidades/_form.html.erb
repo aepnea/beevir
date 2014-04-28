@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :unidad_id %><br>
-    <%= f.number_field :unidad_id %>
+    <%= f.collection_select :unidad_id, @users_unidades, :id, :numero %>
   </div>
   <div class="actions">
     <%= f.submit %>

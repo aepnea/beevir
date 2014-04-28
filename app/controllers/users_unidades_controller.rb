@@ -1,10 +1,13 @@
 class UsersUnidadesController < ApplicationController
+  #load_and_authorize_resource
   before_action :set_user_unidad, only: [:show, :edit, :update, :destroy]
-
+  #skip_load_resource :only => [:create]
   # GET /users_unidades
   # GET /users_unidades.json
   def index
-    @users_unidades = UserUnidad.all
+    cliente = current_user.cliente_id
+    @users_unidades =UserUnidad.all(:joins => :user, :conditions => { :users => {:cliente_id => cliente}})
+
   end
 
   # GET /users_unidades/1
@@ -16,7 +19,8 @@ class UsersUnidadesController < ApplicationController
   def new
     @user_unidad = UserUnidad.new
     cliente = current_user.cliente_id
-    
+    @users_unidades =UserUnidad.all(:joins => :user, :conditions => { :users => {:cliente_id => cliente}})
+
   end
 
   # GET /users_unidades/1/edit

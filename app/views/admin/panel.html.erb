@@ -1,0 +1,20 @@
+<h1>Panel de administración</h1>
+	<% @comunidad_nombre.each do |comunidad| %>
+		<h2>Bienvenido a la Comunidad <%= comunidad.nombre %></h2>
+	<%end%>
+		<br>
+		<br>
+		<%= link_to "Sectores", admin_sector_path(:comunidad_id => "#{@comunidad}"), :method => :post %>
+		<br>
+		<%= link_to "Unidades" %>
+		<br>
+		<%= link_to "Directorio Residentes" %>
+		<br>
+		<%= link_to "Espacios Comunes" %>
+		<br>
+		<%= link_to "Calendario" %>
+		<br>
+		<%= link_to "Reglamento" %>
+		<br>
+<%= link_to 'Salir', destroy_user_session_path, :method => :delete %>
+

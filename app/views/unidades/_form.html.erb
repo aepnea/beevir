@@ -12,6 +12,14 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :comunidad_id %><br>
+    <%= f.collection_select :comunidad_id, @comunidad, :id, :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :sector_id %><br>
+    <%= f.collection_select :sector_id, @sector, :id, :nombre %>
+  </div>
+  <div class="field">
     <%= f.label :numero %><br>
     <%= f.number_field :numero %>
   </div>
@@ -22,14 +30,6 @@
   <div class="field">
     <%= f.label :busy %><br>
     <%= f.check_box :busy %>
-  </div>
-  <div class="field">
-    <%= f.label :sector_id %><br>
-    <%= f.collection_select :sector_id, @sector, :id, :nombre %>
-  </div>
-  <div class="field">
-    <%= f.label :comunidad_id %><br>
-    <%= f.collection_select :comunidad_id, @comunidad, :id, :nombre %>
   </div>
   <div class="actions">
     <%= f.submit %>
