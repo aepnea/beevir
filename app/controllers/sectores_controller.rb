@@ -7,15 +7,19 @@ class SectoresController < ApplicationController
   # GET /sectores
   # GET /sectores.json
   def index
-    @comunidad = session[:comunidad_id]
-  	cliente = current_user.cliente_id
-    @current_comunidad = Comunidad.where("comunidades.cliente_id = '#{cliente}' and comunidades.id = '#{@comunidad}'")
-    @current_comunidad.each do |com|
+    if session[:comunidad_id] == nil
+      raise "InvalidAccess"
+    else
+      @comunidad = session[:comunidad_id]
+      cliente = current_user.cliente_id
+      @current_comunidad = Comunidad.where("comunidades.cliente_id = '#{cliente}' and comunidades.id = '#{@comunidad}'")
+      @current_comunidad.each do |com|
         if cliente == com.cliente_id
           @sectores = Sector.all.includes(:comunidad).where("comunidades.cliente_id = '#{cliente}' and comunidades.id ='#{com.id}'").references(:comunidad)
         else
-          raise InvalidUserAccess, '¡No, no, no!'
+          raise "InvalidUserAccess"
         end
+      end
     end  
   end
 
