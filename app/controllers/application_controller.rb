@@ -21,7 +21,12 @@ class ApplicationController < ActionController::Base
         "/comunidad/logout"
     end
   end
-  
+  #### helpers
+  helper_method :validar_comunidad
+    def validar_comunidad(*x)
+      valor = x
+      return valor
+    end  
 
   
   rescue_from CanCan::AccessDenied do |exception|

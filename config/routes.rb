@@ -26,7 +26,7 @@ Beevir::Application.routes.draw do
   resources :users
     get "admin/index"
     post "admin/panel"
-    post "admin/sector"
+    #post "admin/sector"
     get "comunidad/logout"
     get "comunidad/comunidad"
  

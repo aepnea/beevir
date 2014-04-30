@@ -7,9 +7,16 @@ class SectoresController < ApplicationController
   # GET /sectores
   # GET /sectores.json
   def index
+    @comunidad = session[:comunidad_id]
   	cliente = current_user.cliente_id
-  	@sectores = Sector.all(:joins => :comunidad, :conditions => { :comunidades => {:cliente_id => cliente}})
-  
+    @current_comunidad = Comunidad.where("comunidades.cliente_id = '#{cliente}' and comunidades.id = '#{@comunidad}'")
+    @current_comunidad.each do |com|
+        if cliente == com.cliente_id
+          @sectores = Sector.all.includes(:comunidad).where("comunidades.cliente_id = '#{cliente}' and comunidades.id ='#{com.id}'").references(:comunidad)
+        else
+          raise InvalidUserAccess, '¡No, no, no!'
+        end
+    end  
   end
 
   # GET /sectores/1
@@ -19,13 +26,14 @@ class SectoresController < ApplicationController
 
   # GET /sectores/new
   def new
+    @comunidad = session[:comunidad_id]
     @sector = Sector.new
     cliente = current_user.cliente_id
-    @comunidades = Comunidad.where(cliente_id: cliente)
   end
 
   # GET /sectores/1/edit
   def edit
+    @comunidad = session[:comunidad_id]
   end
 
   # POST /sectores
@@ -35,7 +43,7 @@ class SectoresController < ApplicationController
 
     respond_to do |format|
       if @sector.save
-        format.html { redirect_to @sector, notice: 'Sector was successfully created.' }
+        format.html { redirect_to @sector, notice: 'Sector creado satisfactoriamente.' }
         format.json { render action: 'show', status: :created, location: @sector }
       else
         format.html { render action: 'new' }

@@ -16,8 +16,7 @@
     <%= f.text_field :nombre %>
   </div>
   <div class="field">
-    <%= f.label :comunidad_id %><br>
-    <%= f.collection_select :comunidad_id, @comunidades, :id, :nombre%>
+    <%= f.hidden_field :comunidad_id, :value =>"#{@comunidad}"%>
   </div>
   <div class="actions">
     <%= f.submit %>

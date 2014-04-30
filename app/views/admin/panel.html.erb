@@ -1,10 +1,12 @@
 <h1>Panel de administración</h1>
+
 	<% @comunidad_nombre.each do |comunidad| %>
 		<h2>Bienvenido a la Comunidad <%= comunidad.nombre %></h2>
 	<%end%>
 		<br>
 		<br>
-		<%= link_to "Sectores", admin_sector_path(:comunidad_id => "#{@comunidad}"), :method => :post %>
+
+		<%= link_to "Sectores", sectores_path %>
 		<br>
 		<%= link_to "Unidades" %>
 		<br>
