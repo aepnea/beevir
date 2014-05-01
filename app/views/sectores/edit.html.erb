@@ -1,6 +1,12 @@
+<% if session[:comunidad_id].to_s == @sector.comunidad_id.to_s %>
+
 <h1>Editing sector</h1>
 
 <%= render 'form' %>
 
 <%= link_to 'Show', @sector %> |
 <%= link_to 'Back', sectores_path %>
+
+<%else%>
+	<h1>Invalid Url</h1>
+<%end%>
