@@ -12,8 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :comunidad_id %><br>
-    <%= f.collection_select :comunidad_id, @comunidad, :id, :nombre %>
+    <%= f.hidden_field :comunidad_id, :value =>"#{session[:comunidad_id]}"%>
   </div>
   <div class="field">
     <%= f.label :sector_id %><br>
@@ -28,7 +27,7 @@
     <%= f.number_field :mt2 %>
   </div>
   <div class="field">
-    <%= f.label :busy %><br>
+    <%= f.label :busy, "Ocupado" %><br>
     <%= f.check_box :busy %>
   </div>
   <div class="actions">

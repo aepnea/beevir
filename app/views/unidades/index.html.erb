@@ -1,11 +1,11 @@
-<h1>Listing unidades</h1>
+<h1>Unidades</h1>
 
 <table>
   <thead>
     <tr>
       <th>Numero</th>
       <th>Mt2</th>
-      <th>Busy</th>
+      <th>Ocupado</th>
       <th>Sector</th>
       <th>Comunidad</th>
       <th></th>
@@ -20,11 +20,11 @@
         <td><%= unidad.numero %></td>
         <td><%= unidad.mt2 %></td>
         <td><%= unidad.busy %></td>
-        <td><%= unidad.sector_id %></td>
-        <td><%= unidad.comunidad_id %></td>
-        <td><%= link_to 'Show', unidad %></td>
-        <td><%= link_to 'Edit', edit_unidad_path(unidad) %></td>
-        <td><%= link_to 'Destroy', unidad, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= unidad.sector.nombre %></td>
+        <td><%= unidad.comunidad.nombre%></td>
+        <td><%= link_to 'Ver', unidad %></td>
+        <td><%= link_to 'Editar', edit_unidad_path(unidad) %></td>
+        <td><%= link_to 'Eliminar', unidad, method: :delete, data: { confirm: 'Estas Seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Unidad', new_unidad_path %>
+<%= link_to 'Nueva Unidad', new_unidad_path %>

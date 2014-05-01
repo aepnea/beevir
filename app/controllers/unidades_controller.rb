@@ -20,13 +20,16 @@ class UnidadesController < ApplicationController
   # GET /unidades/new
   def new
     @unidad = Unidad.new
+    comunidad = session[:comunidad_id]
     cliente = current_user.cliente_id
-    @sector = Sector.all(:joins => :comunidad, :conditions => { :comunidades => {:cliente_id => cliente}})
-    @comunidad = Comunidad.where(cliente_id: cliente)
+    @sector = Sector.all.includes(:comunidad).where("comunidades.cliente_id = '#{cliente}' and comunidades.id ='#{comunidad}'").references(:comunidad)
   end
 
   # GET /unidades/1/edit
   def edit
+    cliente = current_user.cliente_id
+    comunidad = session[:comunidad_id]
+    @sector = Sector.all.includes(:comunidad).where("comunidades.cliente_id = '#{cliente}' and comunidades.id ='#{comunidad}'").references(:comunidad)    
   end
 
   # POST /unidades
