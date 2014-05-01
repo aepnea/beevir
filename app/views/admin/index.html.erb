@@ -1,6 +1,5 @@
 <h1>Lista de Comunidades</h1>
 
-<%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
 <% @comunidades.each do |comunidades|%>
 	<br>
 	<%= link_to "#{comunidades.nombre}", admin_panel_path(:controller => 'admin', :action => 'sector', :comunidad_id => "#{comunidades.id}"), :method => :post %>

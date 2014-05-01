@@ -3,8 +3,8 @@
 <head>
   <title>Beevir</title>
   <%= stylesheet_link_tag "estilo", "normalize", media: "all", "data-turbolinks-track" => true %>
-  
   <%= csrf_meta_tags %>
+  <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
 
 </head>
 <body>
