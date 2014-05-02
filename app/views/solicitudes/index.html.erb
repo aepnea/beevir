@@ -1,0 +1,39 @@
+<h1>Solicitudes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Descripcion</th>
+      <th>Adjunto</th>
+      <th>Comunidad</th>
+      <th>Unidad</th>
+      <th>Estado</th>
+      <th>Responsable</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @solicitudes.each do |solicitud| %>
+      <tr>
+        <td><%= solicitud.titulo %></td>
+        <td><%= solicitud.descripcion %></td>
+        <td><%= solicitud.adjunto %></td>
+        <td><%= solicitud.comunidad.nombre %></td>
+        <td><%= solicitud.unidad.numero %></td>
+        <td><%= solicitud.estado.estado %></td>
+        <td><%= solicitud.role.name %></td>
+        <td><%= link_to 'Ver', solicitud %></td>
+        <td><%= link_to 'Editar', edit_solicitud_path(solicitud) %></td>
+        <td><%= link_to 'Eliminar', solicitud, method: :delete, data: { confirm: 'Esta Seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nueva Solicitud', new_solicitud_path %>

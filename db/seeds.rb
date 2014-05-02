@@ -67,3 +67,5 @@ Comunidad.create([{nombre: 'crimawa', direccion: 'german riesco 430', ciudad: 'c
 					{nombre: 'caballeros', direccion: 'heriberto soto', ciudad: 'sn fdo', region_id:'7', tipo_unidad_id: '1', user_id: '1', cliente_id: '2'}, \
 					{nombre: 'del anillo', direccion: ' miembrillar', ciudad: 'sn fdo', region_id:'7', tipo_unidad_id: '1', user_id: '1', cliente_id: '2'}])
 
+# Creando Estados para Solicitudes
+Estado.create ([{estado: 'abierto'}, {estado: 'en proceso'}, {estado: 'pendiente'}, {estado: 'cerrado'}])

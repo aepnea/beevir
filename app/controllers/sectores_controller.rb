@@ -8,7 +8,7 @@ class SectoresController < ApplicationController
   # GET /sectores.json
   def index
     if session[:comunidad_id] == nil
-      raise "InvalidAccess"
+      raise "Invalid Url"
     else
 ### esto puede ser un helper
       comunidad = session[:comunidad_id]

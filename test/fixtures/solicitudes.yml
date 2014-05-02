@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  titulo: MyString
+  descripcion: MyText
+  adjunto: 
+  comunidad_id: 1
+  unidad_id: 1
+  estado_id: 1
+  role_id: 1
+
+two:
+  titulo: MyString
+  descripcion: MyText
+  adjunto: 
+  comunidad_id: 1
+  unidad_id: 1
+  estado_id: 1
+  role_id: 1

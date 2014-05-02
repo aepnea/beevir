@@ -1,9 +1,7 @@
 Beevir::Application.routes.draw do
   
 
-
-
-
+  resources :solicitudes
 
   resources :comunidades_users
 

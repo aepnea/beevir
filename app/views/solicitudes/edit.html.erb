@@ -1,0 +1,10 @@
+<% if session[:comunidad_id].to_s == @solicitud.comunidad_id.to_s %>
+	<h1>Editing solicitud</h1>
+
+	<%= render 'form' %>
+
+	<%= link_to 'Ver', @solicitud %> |
+	<%= link_to 'Volver', solicitudes_path %>
+<%else%>
+	<h1>Invalid Url</h1>
+<%end%>
