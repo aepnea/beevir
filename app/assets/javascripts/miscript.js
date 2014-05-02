@@ -5,11 +5,22 @@ $(function(){
 	function mostrar(){
 		$('.formulario').slideToggle();
 	}
+
+	$(".mensajes").hide(); //start with the frst
+		setInterval(function() {
+			$(".asuntos, .mensajes").slideToggle();
+	}, 3000);
+
+	$( "#progressbar" ).progressbar({
+		value: 37
+	});
+
+
 });
 
 $(".entrar").click(function() {
 
-    $('html, body').animate({
+	$('html, body').animate({
 		scrollTop: $(".formito").offset().top
 	},1000);
 });

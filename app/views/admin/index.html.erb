@@ -1,7 +1,64 @@
-<h1>Lista de Comunidades</h1>
+	<title>Lista de Comunidades</title>
+	<%= stylesheet_link_tag "normalize" ,"estilos", "jquery-ui", media: "all", "data-turbolinks-track" => true %>
+</head>
+<body>
+<header>
+    <div class="contHeader">
+      <div class="logo">
+        <figure>
+          <img src=<%= image_path("logo.png") %> alt="">
+        </figure>
+      </div>
+      <div class="avatar">
+        <a href="#">
+          <figure>
+            <img src=<%= image_path("avatar.svg") %> alt="">
+          </figure>
+          <div class="nombre">
+            <span>Oroborusm</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </header>
+	<nav class="listas">
+		<ul>
+			<a href="#"><li>home</li></a>
+			<a href="#"><li>link1</li></a>
+			<a href="#"><li>link2</li></a>
+			<a href="#"><li>link3</li></a>
+			<a href="#"><li>link4</li></a>
+		</ul>
+	</nav>
+	<h2>Panel de Administrador</h2>
+	<div id="progressbar" class="progressbar"></div>
+	<p>Has ocupado un 37% de las licencias. Haz clic <a href="#">aquí</a> para obtener más.</p>
+	
+	<section>
+		<ul>
+			<% @comunidades.each do |comunidades|%>
+				<li>
+					<figure>
+						<div class="comunidad">
+							<img  src=<%= image_path("comunidadgris.svg") %> alt="">
+						</div>
+						<figcaption class="comuNombre">
+							<%= link_to "#{comunidades.nombre}", admin_panel_path(:controller => 'admin', :action => 'sector', :comunidad_id => "#{comunidades.id}"), :method => :post %>
+							<p class="mensajes">Tienes 6 mensajes</p>
+							<p class="asuntos">6 asuntos pendientes</p>
+						</figcaption>
+					</figure>
+				</li>
+			<%end%>
+		</ul>
+	</section>
 
-<% @comunidades.each do |comunidades|%>
-	<br>
-	<%= link_to "#{comunidades.nombre}", admin_panel_path(:controller => 'admin', :action => 'sector', :comunidad_id => "#{comunidades.id}"), :method => :post %>
+<script>
+	$(function() {
+		$( "#progressbar" ).progressbar({
+			value: 37
+		});
+	});
+</script>
 
-<%end%>
+
