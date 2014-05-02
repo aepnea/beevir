@@ -15,6 +15,7 @@
 	inflect.irregular 'unidad', 'unidades'
 	inflect.irregular 'user_unidad', 'users_unidades'
 	inflect.irregular 'comunidad_user', 'comunidades_users'
+	inflect.irregular 'solicitud','solicitudes'
  end
 #   inflect.plural /^(ox)$/i, '\1en'
 #   inflect.singular /^(ox)en/i, '\1'
