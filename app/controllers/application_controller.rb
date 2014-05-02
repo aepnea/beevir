@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource_or_scope)
   	if current_user.has_role? :dios
-        "/dios/"
+        "/dios/panel"
     elsif current_user.has_role? :admin
         "/admin/index"        
     elsif current_user.has_role? :copropietario

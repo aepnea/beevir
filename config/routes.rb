@@ -18,6 +18,7 @@ Beevir::Application.routes.draw do
   resources :tipo_unidades
 
   get "dios/index"
+  get "dios/panel"
   resources :dios
   resources :clientes
   resources :regiones
