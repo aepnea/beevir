@@ -1,5 +1,9 @@
-
 $(function(){
+	$('.avatar').on('click' , esconde);
+	function esconde(){
+		$('.tools').animate({width: 'toggle'});
+	}
+
 	$('.formulario').hide();
 	$('.entrar').on('click', mostrar);
 	function mostrar(){
@@ -15,12 +19,12 @@ $(function(){
 		value: 37
 	});
 
+	$(".entrar").click(function() {
 
-});
+		$('html, body').animate({
+			scrollTop: $(".formito").offset().top
+		},1000);
+	});
 
-$(".entrar").click(function() {
 
-	$('html, body').animate({
-		scrollTop: $(".formito").offset().top
-	},1000);
 });

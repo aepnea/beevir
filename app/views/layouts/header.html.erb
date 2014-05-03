@@ -4,7 +4,6 @@
   <title></title>
   <%= stylesheet_link_tag "estilos", "jquery-ui", "normalize", media: "all", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
-  <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
 
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,300,600' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Varela' rel='stylesheet' type='text/css'>
@@ -18,16 +17,18 @@
 	          <img src=<%= image_path("logo.png") %> alt="">
 	        </figure>
 	      </div>
+	       <div class="tools">
+          		<%= link_to "Cerrar sesión", destroy_user_session_path, :method => :delete %>
+          </div>
 	      <div class="avatar">
-	        <a href="#">
 	          <figure>
 	            <img src=<%= image_path("avatar.svg") %> alt="">
 	          </figure>
 	          <div class="nombre">
 	            <span>Oroborusm</span>
 	          </div>
-	        </a>
 	      </div>
+
 		</div>
 	</header>
 	<nav class="listas">
