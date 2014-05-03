@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <%= stylesheet_link_tag "estilos", "jquery-ui", "normalize", media: "all", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,300,600' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Varela' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+	<header>
+		<div class="contHeader">
+	      <div class="logo">
+	        <figure>
+	          <img src=<%= image_path("logo.png") %> alt="">
+	        </figure>
+	      </div>
+	      <div class="avatar">
+	        <a href="#">
+	          <figure>
+	            <img src=<%= image_path("avatar.svg") %> alt="">
+	          </figure>
+	          <div class="nombre">
+	            <span>Oroborusm</span>
+	          </div>
+	        </a>
+	      </div>
+		</div>
+	</header>
+	<nav class="listas">
+		<ul>
+			<a href="#"><li>home</li></a>
+			<a href="#"><li>link1</li></a>
+			<a href="#"><li>link2</li></a>
+			<a href="#"><li>link3</li></a>
+			<a href="#"><li>link4</li></a>
+		</ul>
+	</nav>
+	<%= yield %>
+
+	<div id='footer'>
+        <%= render :partial => 'layouts/footer' %>
+        <%= yield :footer %>
+	</div>
+
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	
+</body>
+</html>
