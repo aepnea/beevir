@@ -3,25 +3,81 @@
 	<% @comunidad_nombre.each do |comunidad| %>
 		<h2>Bienvenido a la Comunidad <%= comunidad.nombre %></h2>
 	<%end%>
-		<br>
-		<br>
+	<section>
+		<ul class="listaPan">
+			<li>
+				<figure>
+					<div class="panImg">
+						<img  src=<%= image_path("comunidadgris.svg") %> alt="">
+					</div>
+					<figcaption class="panNombre">
+						<%= link_to "Sectores", sectores_path %>
+					</figcaption>
+				</figure>
+			</li>
+
+			<li>
+				<figure>
+					<div class="panImg">
+						<img  src=<%= image_path("comunidadgris.svg") %> alt="">
+					</div>
+					<figcaption class="panNombre">
+						<%= link_to "Unidades", unidades_path %>
+					</figcaption>
+				</figure>
+				
+			</li>
+
+			<li>
+				<figure>
+					<div class="panImg">
+						<img  src=<%= image_path("comunidadgris.svg") %> alt="">
+					</div>
+					<figcaption class="panNombre">
+						<%= link_to "Directorio Residentes" %>
+					</figcaption>
+				</figure>
+				
+			</li>
+
+			<li>
+				<figure>
+					<div class="panImg">
+						<img  src=<%= image_path("comunidadgris.svg") %> alt="">
+					</div>
+					<figcaption class="panNombre">
+						<%= link_to "Espacios Comunes" %>
+					</figcaption>
+				</figure>
+				
+			</li>
+			
+			<li>
+				<figure>
+					<div class="panImg">
+						<img  src=<%= image_path("comunidadgris.svg") %> alt="">
+					</div>
+					<figcaption class="panNombre">
+						<%= link_to "Calendario" %>
+					</figcaption>
+				</figure>
+				
+			</li>
+			<li>
+				<figure>
+					<div class="panImg">
+						<img  src=<%= image_path("comunidadgris.svg") %> alt="">
+					</div>
+					<figcaption class="panNombre">
+						<%= link_to "Reglamento" %>
+					</figcaption>
+				</figure>
+				
+			</li>
+		</ul>
+	</section>
+
 		<h3>Comunidad</h3>
-		<br>
-		<%= link_to "Sectores", sectores_path %>
-		<br>
-		<%= link_to "Unidades", unidades_path %>
-		<br>
-		<%= link_to "Directorio Residentes" %>
-		<br>
-		<%= link_to "Espacios Comunes" %>
-		<br>
-		<%= link_to "Calendario" %>
-		<br>
-		<%= link_to "Reglamento" %>
-		<br>
-		<br>
+
 		<h3>Administración</h3> 
-		<br>
 		<%= link_to "Solicitudes", solicitudes_path %>
-
-
