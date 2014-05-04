@@ -8,7 +8,7 @@
 				<li>
 					<figure>
 						<div class="comunidad">
-							<img  src=<%= image_path("comunidadgris.svg") %> alt="">
+							<%= link_to image_tag("comunidadgris.svg"), admin_panel_path(:controller => 'admin', :action => 'sector', :comunidad_id => "#{comunidades.id}"), :method => :post %>
 						</div>
 						<figcaption class="comuNombre">
 							<%= link_to "#{comunidades.nombre}", admin_panel_path(:controller => 'admin', :action => 'sector', :comunidad_id => "#{comunidades.id}"), :method => :post %>
