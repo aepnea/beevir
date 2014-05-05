@@ -1,7 +1,8 @@
 class UnidadesController < ApplicationController
  load_and_authorize_resource
   before_action :set_unidad, only: [:show, :edit, :update, :destroy]
- skip_load_resource :only => [:create]
+  skip_load_resource :only => [:create]
+  layout 'header'
 
 
   # GET /unidades

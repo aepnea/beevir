@@ -1,35 +1,32 @@
-<h1>Unidades</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Numero</th>
-      <th>Mt2</th>
-      <th>Ocupado</th>
-      <th>Sector</th>
-      <th>Comunidad</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @unidades.each do |unidad| %>
-      <tr>
-        <td><%= unidad.numero %></td>
-        <td><%= unidad.mt2 %></td>
-        <td><%= unidad.busy %></td>
-        <td><%= unidad.sector.nombre %></td>
-        <td><%= unidad.comunidad.nombre%></td>
-        <td><%= link_to 'Ver', unidad %></td>
-        <td><%= link_to 'Editar', edit_unidad_path(unidad) %></td>
-        <td><%= link_to 'Eliminar', unidad, method: :delete, data: { confirm: 'Estas Seguro?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'Nueva Unidad', new_unidad_path %>
+   <h1>Unidades</h1>
+   <section>
+      <ul class="listaUni">
+        <% @unidades.each do |unidad| %>
+          <li class="uniCont">
+            <div class="contieneUniL">
+              <div class="uniSectNom"><p>Comunidad :</p></div>
+              <div class="uniNum"><p>Numero :</p></div>
+              <div class="uniMt"><p>Metros :</p></div>
+              <div class="uniBusy"><p>Busy :</p></div>
+              <div class="uniSect"><p>Sector :</p></div>
+            </div>
+            <div class="contieneUniR">
+              <div class="uniSectNom"><p><%= unidad.comunidad.nombre%></p></div>
+              <div class="uniNum"><p><%= unidad.numero %></p></div>
+              <div class="uniMt"><p><%= unidad.mt2 %></p></div>
+              <div class="uniBusy"><p><%= unidad.busy %></p></div>
+              <div class="uniSect"><p><%= unidad.sector.nombre %></p></div>
+            </div>
+            
+            <ul class="menu">
+              <li><%= link_to 'Ver', unidad %></li>
+              <li><%= link_to 'Editar', edit_unidad_path(unidad) %></li>
+              <li><%= link_to 'Eliminar', unidad, method: :delete, data: { confirm: 'Estas Seguro?' } %></li>
+            </ul>
+          </li>
+        <%end%>
+      </ul>
+      <div class="nuevoSect">
+        <%= link_to 'Nueva Unidad', new_unidad_path %>
+      </div>
+    </section>

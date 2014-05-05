@@ -1,12 +1,18 @@
-<% if session[:comunidad_id].to_s == @sector.comunidad_id.to_s %>
-
-<h1>Editing sector</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @sector %> |
-<%= link_to 'Back', sectores_path %>
-
-<%else%>
-	<h1>Invalid Url</h1>
-<%end%>
+	<h1>Editar Sector</h1>
+	<% if session[:comunidad_id].to_s == @sector.comunidad_id.to_s %>
+	<section>
+		<ul class="listaSect">
+			<li class="sectCont">
+				<%= render 'form' %>
+			</li>
+		</ul>
+		<div class="nuevoBot">
+			<%= link_to 'Mostrar', @sector %>
+		</div>
+		<div class="nuevoBot">
+			<%= link_to 'Volver', sectores_path %>
+		</div>
+		<%else%>
+			<h1>Invalid Url</h1>
+		<%end%>
+	</section>

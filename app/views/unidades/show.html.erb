@@ -1,33 +1,40 @@
-<% if session[:comunidad_id].to_s == @unidad.comunidad_id.to_s %>
-  <p id="notice"><%= notice %></p>
+  <section>
+    <% if session[:comunidad_id].to_s == @unidad.comunidad_id.to_s %>
+    <ul class="listaVer">
+    
+      <p id="notice"><%= notice %></p>
+        <li>
+          <p>
+            <strong>Numero:</strong>
+            <%= @unidad.numero %>
+          </p>
+          <p>
+            <strong>Mt2:</strong>
+            <%= @unidad.mt2 %>
+          </p>
+          <p>
+            <strong>Ocupado:</strong>
+            <%= @unidad.busy %>
+          </p>
+          <p>
+            <strong>Sector:</strong>
+            <%= @unidad.sector.nombre %>
+          </p>
+          <p>
+            <strong>Comunidad:</strong>
+            <%= @unidad.comunidad.nombre %>
+          </p>
+        </li>
 
-  <p>
-    <strong>Numero:</strong>
-    <%= @unidad.numero %>
-  </p>
-
-  <p>
-    <strong>Mt2:</strong>
-    <%= @unidad.mt2 %>
-  </p>
-
-  <p>
-    <strong>Ocupado:</strong>
-    <%= @unidad.busy %>
-  </p>
-
-  <p>
-    <strong>Sector:</strong>
-    <%= @unidad.sector.nombre %>
-  </p>
-
-  <p>
-    <strong>Comunidad:</strong>
-    <%= @unidad.comunidad.nombre %>
-  </p>
-
-  <%= link_to 'Editar', edit_unidad_path(@unidad) %> |
-  <%= link_to 'Volver', unidades_path %>
-<%else%>
-  <h1>Invalid Url</h1>
-<%end%>
+    </ul>
+    <div class="nuevoBot">
+      <%= link_to 'Editar', edit_unidad_path(@unidad) %>
+    </div>
+    <di class="nuevoBot">
+      <%= link_to 'Volver', unidades_path %>
+    </di>
+    
+    <%else%>
+      <h1>Invalid Url</h1>
+    <%end%>
+  </section>

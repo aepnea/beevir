@@ -20,9 +20,7 @@
 	          <img src=<%= image_path("logo.png") %> alt="">
 	        </figure>
 	      </div>
-	       <div class="tools">
-          		<%= link_to "Cerrar sesión", destroy_user_session_path, :method => :delete %>
-          </div>
+
 	      <div class="avatar">
 	          <figure>
 	            <img src=<%= image_path("avatar.svg") %> alt="">
@@ -30,6 +28,9 @@
 	          <div class="nombre">
 	            <span><%= current_user.nombre %> <%= current_user.apellido1 %></span>
 	          </div>
+	          <div class="tools">
+          		<%= link_to "Cerrar sesión", destroy_user_session_path, :method => :delete %>
+          	  </div>
 	      </div>
 
 		</div>

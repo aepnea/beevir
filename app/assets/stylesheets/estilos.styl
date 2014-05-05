@@ -51,6 +51,7 @@ body
 			.avatar
 				cursor pointer
 				float right
+				position relative
 				figure
 					background white
 					float left
@@ -59,14 +60,31 @@ body
 					img
 						border-radius 50%
 						margin 0
-						width 50px
+						width 40px
 				.nombre
 					float left
 					margin-left 1em
 					position relative
-					top 1em
+					top .7em
 					span
 						color grisOscuro
+						border-bottom 2px solid gris
+						font-size .7em
+				&:hover
+					opacity .7
+				.tools
+					border-radius .5em
+					display none
+					float right
+					margin-top 1em
+					position absolute
+					text-align center
+					top 1em
+					right 0
+					a
+						font-size .7em
+						margin 1em 0
+						text-align center
 			.logo
 				float left
 				figure
@@ -82,18 +100,6 @@ body
 							filter grayscale(0)
 							-webkit-filter grayscale(0)
 							-moz-filter grayscale(0)
-			.tools
-				border-radius .5em
-				display none
-				float right
-				margin-top 1em
-				position relative
-				text-align center
-				a
-					font-size .7em
-					margin 1em 0
-					padding 1em .5em
-					text-align center
 	nav
 		display block
 		font-size .7em
@@ -191,16 +197,32 @@ body
 						height 75px
 						top 0
 		.listaSect
+		.listaUni
 			margin 0
 			padding 0
 			position relative
 			.sectCont
+			.uniCont
 				background #91A478
 				border-radius .5em
+				list-style none
 				margin 1em auto
 				overflow hidden
 				padding 1em 0
 				width 50%
+				ul
+					margin 1em auto 0
+					padding 0
+					text-align center
+					width 50%
+					li
+						display inline-block
+						a
+							color white
+							font-family 'Varela', sans-serif
+							font-size .8em
+							margin 0 1em
+							padding 1em 0
 				.actions
 					display block
 					margin 0 auto
@@ -215,6 +237,24 @@ body
 						margin 1em 0 0 0
 						padding .3em 0
 						width 180px
+				.contieneUniL
+					float left
+					overflow hidden
+					width 48%
+					div
+						p
+							color white
+							text-align right
+
+				.contieneUniR
+					float right
+					text-align left
+					overflow hidden
+					width 48%
+					div
+						p
+							color white
+							text-align left
 				.field
 					text-align center
 					label
@@ -235,20 +275,21 @@ body
 				.sectNom
 					p
 						font-size 1.2em
-				ul
-					margin 1em auto 0
-					padding 0
-					text-align center
-					width 50%
-					li
-						display inline-block
-						a
-							color white
-							font-family 'Varela', sans-serif
-							font-size .8em
-							margin 0 1em
-							padding 1em 0
-		.nuevoSect
+
+		.listaVer
+			margin 0
+			padding 0
+			position relative
+			li
+				background gris
+				border-radius .5em
+				display block
+				margin 0 auto
+				padding 1em 0
+				width 49%
+				p
+					color white
+		.nuevoBot
 			display block
 			margin 2em auto 0
 			text-align center
@@ -313,28 +354,22 @@ body
 					text-align center
 					overflow hidden
 					figure
+						display none
 					.nombre
-						display inline-block
-						vertical-align middle
-					figure
-						float none
-						img
-							width 40px
-					.nombre
-						float none
+						float left
+						padding-bottom 1em
 						top 0
+					.tools
+						margin 0
+						text-align right
+						top 0
+						width 100%
+						z-index 10
 				.logo
 					figure
 						display block
 						padding .5em 0
 						text-align center
-				.tools
-					background white
-					margin 0
-					padding 1em 0
-					text-align center
-					width 100%
-					z-index 10
 		section
 			.listaCom
 			.listaPan
