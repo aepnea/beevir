@@ -1,28 +1,20 @@
-<h1>Sectores</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Comunidad</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+   <h1>Sectores</h1>
+   <section>
+      <ul class="listaSect">
+        <% @sectores.each do |sector| %>
+          <li class="sectCont">
+            <div class="seComuNombre"><p><%= sector.comunidad.nombre %></p></div>
+            <div class="sectNom"><p><%= sector.nombre %></p></div>
+            <ul>
+              <li><%= link_to 'Ver', sector %></li>
+              <li><%= link_to 'Editar', edit_sector_path(sector) %></li>
+              <li><%= link_to 'Eliminar', sector, method: :delete, data: { confirm: 'Está seguro?' } %></li>
+            </ul>
+          </li>
+        <%end%>
+      </ul>
+      <div class="nuevoSect">
+        <%= link_to 'Crear Sector', new_sector_path %>
+      </div>
+    </section>
 
-  <tbody>
-    <% @sectores.each do |sector| %>
-      <tr>
-        <td><%= sector.nombre %></td>
-        <td><%= sector.comunidad.nombre %></td>
-        <td><%= link_to 'Ver', sector %></td>
-        <td><%= link_to 'Editar', edit_sector_path(sector) %></td>
-        <td><%= link_to 'Eliminar', sector, method: :delete, data: { confirm: 'Está seguro?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'Nuevo Sector', new_sector_path %>

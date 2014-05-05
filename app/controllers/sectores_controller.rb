@@ -2,6 +2,7 @@ class SectoresController < ApplicationController
  load_and_authorize_resource
   before_action :set_sector, only: [:show, :edit, :update, :destroy]
   skip_load_resource :only => [:create]
+  layout 'header'
 
 
   # GET /sectores

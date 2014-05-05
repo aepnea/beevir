@@ -1,4 +1,4 @@
-<h1>Panel de administración</h1>
+	<h1>Panel de administración</h1>
 
 	<% @comunidad_nombre.each do |comunidad| %>
 		<h2>Bienvenido a la Comunidad <%= comunidad.nombre %></h2>
@@ -8,7 +8,7 @@
 			<li>
 				<figure>
 					<div class="panImg">
-						<img  src=<%= image_path("comunidadgris.svg") %> alt="">
+						<%= link_to image_tag("comunidadgris.svg"), sectores_path %>
 					</div>
 					<figcaption class="panNombre">
 						<%= link_to "Sectores", sectores_path %>
@@ -19,7 +19,7 @@
 			<li>
 				<figure>
 					<div class="panImg">
-						<img  src=<%= image_path("comunidadgris.svg") %> alt="">
+						<%= link_to image_tag("comunidadgris.svg"), unidades_path %>
 					</div>
 					<figcaption class="panNombre">
 						<%= link_to "Unidades", unidades_path %>
@@ -31,7 +31,7 @@
 			<li>
 				<figure>
 					<div class="panImg">
-						<img  src=<%= image_path("comunidadgris.svg") %> alt="">
+						<%= link_to image_tag("comunidadgris.svg") %>
 					</div>
 					<figcaption class="panNombre">
 						<%= link_to "Directorio Residentes" %>
@@ -43,7 +43,7 @@
 			<li>
 				<figure>
 					<div class="panImg">
-						<img  src=<%= image_path("comunidadgris.svg") %> alt="">
+						<%= link_to image_tag("comunidadgris.svg") %>
 					</div>
 					<figcaption class="panNombre">
 						<%= link_to "Espacios Comunes" %>
@@ -55,7 +55,7 @@
 			<li>
 				<figure>
 					<div class="panImg">
-						<img  src=<%= image_path("comunidadgris.svg") %> alt="">
+						<%= link_to image_tag("comunidadgris.svg") %>
 					</div>
 					<figcaption class="panNombre">
 						<%= link_to "Calendario" %>
@@ -66,7 +66,7 @@
 			<li>
 				<figure>
 					<div class="panImg">
-						<img  src=<%= image_path("comunidadgris.svg") %> alt="">
+						<%= link_to image_tag("comunidadgris.svg") %>
 					</div>
 					<figcaption class="panNombre">
 						<%= link_to "Reglamento" %>
@@ -75,9 +75,8 @@
 				
 			</li>
 		</ul>
+		
+		<div class="solicitudes">
+			<%= link_to "Solicitudes", solicitudes_path %>
+		</div>
 	</section>
-
-		<h3>Comunidad</h3>
-
-		<h3>Administración</h3> 
-		<%= link_to "Solicitudes", solicitudes_path %>

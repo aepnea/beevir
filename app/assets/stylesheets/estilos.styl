@@ -18,6 +18,10 @@ body
 	a
 		color grisOscuro
 	h1
+		font-size 1.8em
+	h2
+		font-size 1.3em
+	h1
 	h2
 	h3
 	h4
@@ -124,49 +128,6 @@ body
 		position relative
 		width 80%
 		.listaCom
-			margin 0
-			padding 0
-			li
-				display inline-block
-				list-style none
-				margin 1em 0
-				position relative
-				width 48%
-				&:nth-child(even)
-					margin-left 1em
-				figure
-					z-index 2
-					.comunidad
-						background linear-gradient(to left, #A2B885 50%, #91A478 50%)
-						border-radius 50%
-						height 200px
-						position relative
-						width 200px
-						z-index 2
-						img
-							width 100%
-					.comuNombre
-						background #D4E4AE
-						border-radius .5em
-						right 0
-						height 150px
-						position absolute
-						top 25px
-						width 90%
-						z-index 1
-						a
-							color white
-							float right
-							font-size 1.3em
-							font-style italic
-							font-weight 700
-							margin .7em 16px 0 0
-							text-align right
-							width 100%
-						p
-							color grisOscuro
-							margin 0 16px 0 0
-							text-align right
 		.listaPan
 			margin 0
 			padding 0
@@ -180,22 +141,18 @@ body
 					margin-left 1em
 				figure
 					z-index 2
+					.comunidad
 					.panImg
 						background linear-gradient(to left, #A2B885 50%, #91A478 50%)
 						border-radius 50%
-						height 75px
 						position relative
-						width 75px
 						z-index 2
-						img
-							width 100%
+					.comuNombre
 					.panNombre
 						background #D4E4AE
 						border-radius .5em
-						right 0
-						height 75px
 						position absolute
-						top 0
+						right 0
 						width 90%
 						z-index 1
 						a
@@ -207,6 +164,108 @@ body
 							margin .7em 16px 0 0
 							text-align right
 							width 100%
+		.listaCom
+			li
+				figure
+					.comunidad
+						height 200px
+						width 200px
+						img
+							width 100%
+					.comuNombre
+						height 150px
+						top 25px
+						p
+							color grisOscuro
+							margin 0 16px 0 0
+							text-align right
+		.listaPan
+			li
+				figure
+					.panImg
+						height 75px
+						width 75px
+						img
+							width 100%
+					.panNombre
+						height 75px
+						top 0
+		.listaSect
+			margin 0
+			padding 0
+			position relative
+			.sectCont
+				background #91A478
+				border-radius .5em
+				margin 1em auto
+				overflow hidden
+				padding 1em 0
+				width 50%
+				.actions
+					display block
+					margin 0 auto
+					width 50%
+					input
+						background grisOscuro
+						border none
+						border-radius .5em
+						color white
+						display block
+						float right
+						margin 1em 0 0 0
+						padding .3em 0
+						width 180px
+				.field
+					text-align center
+					label
+						color white
+					input
+						display block
+						margin 0 auto
+						width 50%
+				.seComuNombre
+				.sectNom
+					p
+						color white
+						margin 0 18px 0 0
+						text-align center
+				.seComuNombre
+					p
+						font-size .8em
+				.sectNom
+					p
+						font-size 1.2em
+				ul
+					margin 1em auto 0
+					padding 0
+					text-align center
+					width 50%
+					li
+						display inline-block
+						a
+							color white
+							font-family 'Varela', sans-serif
+							font-size .8em
+							margin 0 1em
+							padding 1em 0
+		.nuevoSect
+			display block
+			margin 2em auto 0
+			text-align center
+			width 200px
+		.solicitudes
+			margin 2em 0 0 0
+		.nuevoSect
+		.solicitudes	
+			a
+				background naranjo
+				border-radius .5 em
+				color white
+				padding 1em
+				text-align center
+				width 200px
+				&:hover
+					opacity .5
 	.progressbar
 		background #A2B885
 		border-radius .5em
@@ -230,6 +289,7 @@ body
 	body
 		section
 			.listaCom
+			.listaPan
 				li
 					display block
 					margin 2em auto
@@ -277,6 +337,7 @@ body
 					z-index 10
 		section
 			.listaCom
+			.listaPan
 				li
 					width 100%
 		.progressbar
@@ -305,4 +366,10 @@ body
 							p
 								text-align center
 								margin 0
-								
+			.listaPan
+				li
+					figure
+						.panNombre
+							a
+								font-size 1em
+								width 50%

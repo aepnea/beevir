@@ -16,7 +16,7 @@ $(function(){
 	}, 3000);
 
 	$( "#progressbar" ).progressbar({
-		value: 37
+		value: 50
 	});
 
 	$(".entrar").click(function() {
