@@ -8,9 +8,20 @@ class UnidadesController < ApplicationController
   # GET /unidades
   # GET /unidades.json
   def index
-  	cliente = current_user.cliente_id
-    @unidades = Unidad.all(:joins => :comunidad, :conditions => { :comunidades => {:cliente_id => cliente}})
-    
+    if session[:comunidad_id] == nil
+       raise "Invalid URL"
+    else
+  	   cliente = current_user.cliente_id
+       comunidad = session[:comunidad_id]
+       current_comunidad = Comunidad.where("comunidades.cliente_id = '#{cliente}' and comunidades.id = '#{comunidad}'")
+       current_comunidad.each do |com|
+           if cliente == com.cliente_id
+             @unidades = Unidad.all.includes(:comunidad).where("comunidades.cliente_id = '#{cliente}' and comunidades.id ='#{com.id}'").references(:comunidad)
+           else
+             raise "Invalid URL"  
+           end
+       end
+    end   
   end
 
   # GET /unidades/1
