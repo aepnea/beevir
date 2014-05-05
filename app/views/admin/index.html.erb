@@ -5,6 +5,7 @@
 	<section>
 		<ul class="listaCom">
 			<% @comunidades.each do |comunidades|%>
+				<%solicitudes = Solicitud.where("comunidad_id = '#{comunidades.id}' and  (estado_id = '1' or role_id = '1' or estado_id = '4' or estado_id = '3')").count%>
 				<li>
 					<figure>
 						<div class="comunidad">
@@ -13,7 +14,7 @@
 						<figcaption class="comuNombre">
 							<%= link_to "#{comunidades.nombre}", admin_panel_path(:controller => 'admin', :action => 'sector', :comunidad_id => "#{comunidades.id}"), :method => :post %>
 							<p class="mensajes">Tienes 6 mensajes</p>
-							<p class="asuntos">6 asuntos pendientes</p>
+							<p class="asuntos"><%="#{solicitudes}"%> asuntos pendientes</p>
 						</figcaption>
 					</figure>
 				</li>
