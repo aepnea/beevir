@@ -23,6 +23,7 @@ class Ability
          can :manage, TipoUnidad
          can :manage, Unidad
          can :manage, UserUnidad
+         can :manage, Empleado
       elsif user.has_role? :copropietario
          can :manage, Comunidad #aca tengo que poner a los modelos a los cuales tendra acceso.
       elsif user.has_role? :arrendatario

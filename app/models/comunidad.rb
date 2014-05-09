@@ -3,6 +3,7 @@ class Comunidad < ActiveRecord::Base
 	belongs_to :region
 	belongs_to :user
 	belongs_to :cliente
+	has_many :empleados
 	has_many :solicitudes
 	has_many :espacios_comunes
     has_many :unidades

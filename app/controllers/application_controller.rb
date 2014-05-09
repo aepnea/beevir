@@ -21,7 +21,11 @@ class ApplicationController < ActionController::Base
         "/comunidad/logout"
     end
   end
-  
+  helper_method :not_found
+
+  def not_found
+    render :file => "/home/aepnea/Development/beevir/public/404.html",  :status => 404
+  end
   
   rescue_from CanCan::AccessDenied do |exception|
   		flash[:error] = "Acceso Denegado."
