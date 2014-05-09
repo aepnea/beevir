@@ -24,6 +24,10 @@
     <%= f.text_field :ciudad %>
   </div>
   <div class="field">
+    <%= f.label :rut %><br>
+    <%= f.text_field :rut %>
+  </div>
+  <div class="field">
     <%= f.label :region_id %><br>
     <%= f.collection_select :region_id, Region.all, :id, :nombre %>
   </div>

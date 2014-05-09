@@ -62,10 +62,10 @@ user.add_role "dios"
 
 
 # Creando comunidad
-Comunidad.create([{nombre: 'crimawa', direccion: 'german riesco 430', ciudad: 'curacavi', region_id:'5', tipo_unidad_id: '2', user_id: '1', cliente_id: '1'}, \
-					{nombre: 'cona', direccion: 'osvaldo castillo', ciudad: 'sn fdo', region_id:'7', tipo_unidad_id: '1', user_id: '1', cliente_id: '1'}, \
-					{nombre: 'caballeros', direccion: 'heriberto soto', ciudad: 'sn fdo', region_id:'7', tipo_unidad_id: '1', user_id: '1', cliente_id: '2'}, \
-					{nombre: 'del anillo', direccion: ' miembrillar', ciudad: 'sn fdo', region_id:'7', tipo_unidad_id: '1', user_id: '1', cliente_id: '2'}])
+Comunidad.create([{nombre: 'crimawa', direccion: 'german riesco 430', ciudad: 'curacavi', region_id:'5', tipo_unidad_id: '2', user_id: '1', cliente_id: '1', rut: '9834534-7'}, \
+					{nombre: 'cona', direccion: 'osvaldo castillo', ciudad: 'sn fdo', region_id:'7', tipo_unidad_id: '1', user_id: '1', cliente_id: '1', rut: '1023345-8'}, \
+					{nombre: 'caballeros', direccion: 'heriberto soto', ciudad: 'sn fdo', region_id:'7', tipo_unidad_id: '1', user_id: '1', cliente_id: '2', rut: '81234598-8'}, \
+					{nombre: 'del anillo', direccion: ' miembrillar', ciudad: 'sn fdo', region_id:'7', tipo_unidad_id: '1', user_id: '1', cliente_id: '2', rut: '239849023-8'}])
 
 # Creando Estados para Solicitudes
 Estado.create ([{estado: 'abierto'}, {estado: 'en proceso'}, {estado: 'pendiente'}, {estado: 'cerrado'}])

@@ -30,6 +30,10 @@ class ComunidadesController < ApplicationController
   end
   # GET /comunidades/1/edit
   def edit
+    @cliente = current_user.cliente_id
+    @user = User.where(cliente_id: @cliente)
+    @admin =  @user.with_role(:admin)
+
   end
 
   # POST /comunidades
@@ -80,6 +84,6 @@ class ComunidadesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comunidad_params
-      params.require(:comunidad).permit(:nombre, :direccion, :ciudad, :region_id, :tipo_unidad_id, :user_id)
+      params.require(:comunidad).permit(:nombre, :direccion, :ciudad, :rut, :region_id, :tipo_unidad_id, :user_id)
     end
 end

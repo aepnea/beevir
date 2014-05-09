@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Nombre</th>
+      <th>rut</th>
       <th>Direccion</th>
       <th>Ciudad</th>
       <th>Region</th>
@@ -19,6 +20,7 @@
     <% @comunidades.each do |comunidad| %>
       <tr>
         <td><%= comunidad.nombre %></td>
+        <td><%= comunidad.rut %></td>
         <td><%= comunidad.direccion %></td>
         <td><%= comunidad.ciudad %></td>
         <td><%= comunidad.region_id %></td>

@@ -4,6 +4,7 @@ class CreateComunidades < ActiveRecord::Migration
       t.string :nombre
       t.string :direccion
       t.string :ciudad
+      t.string :rut
       t.integer :region_id
       t.integer :tipo_unidad_id
       t.integer :user_id
