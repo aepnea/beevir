@@ -26,10 +26,12 @@
   <div class="field">
     <%= f.hidden_field :comunidad_id, :value => "#{session[:comunidad_id]}" %>
   </div>
+  <%if (current_user.has_role? :admin) == 'false'%>
   <div class="field">
     <%= f.label :unidad_id %><br>
     <%= f.collection_select :unidad_id, @unidad, :id, :numero %>
   </div>
+  <%end%>
   <div class="field">
     <%= f.label :estado_id %><br>
     <%= f.collection_select :estado_id, @estado, :id, :estado %>
