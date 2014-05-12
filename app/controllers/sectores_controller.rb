@@ -9,7 +9,7 @@ class SectoresController < ApplicationController
   # GET /sectores.json
   def index
     if session[:comunidad_id] == nil
-      raise "Invalid Url"
+      not_found
     else
 ### esto puede ser un helper
       comunidad = session[:comunidad_id]
@@ -20,7 +20,7 @@ class SectoresController < ApplicationController
         if cliente == com.cliente_id
           @sectores = Sector.all.includes(:comunidad).where("comunidades.cliente_id = '#{cliente}' and comunidades.id ='#{com.id}'").references(:comunidad)
         else
-          raise "InvalidUserAccess"
+          not_found
         end
       end
     end  

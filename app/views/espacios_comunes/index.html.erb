@@ -1,4 +1,4 @@
-<h1>Listing espacios_comunes</h1>
+<h1>Espacios Comunes</h1>
 
 <table>
   <thead>
@@ -8,7 +8,6 @@
       <th>Reglamento</th>
       <th>Precio</th>
       <th>Foto</th>
-      <th>Comunidad</th>
       <th></th>
       <th></th>
       <th></th>
@@ -22,11 +21,10 @@
         <td><%= espacio_comun.descripcion %></td>
         <td><%= espacio_comun.reglamento %></td>
         <td><%= espacio_comun.precio %></td>
-        <td><%= espacio_comun.foto %></td>
-        <td><%= espacio_comun.comunidad_id %></td>
-        <td><%= link_to 'Show', espacio_comun %></td>
-        <td><%= link_to 'Edit', edit_espacio_comun_path(espacio_comun) %></td>
-        <td><%= link_to 'Destroy', espacio_comun, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= image_tag espacio_comun.photo_path %></td>
+        <td><%= link_to 'Ver', espacio_comun %></td>
+        <td><%= link_to 'Editar', edit_espacio_comun_path(espacio_comun) %></td>
+        <td><%= link_to 'Eliminar', espacio_comun, method: :delete, data: { confirm: 'Esta Seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Espacio comun', new_espacio_comun_path %>
+<%= link_to 'Nuevo Espacio comun', new_espacio_comun_path %>

@@ -7,7 +7,13 @@ class EspaciosComunesController < ApplicationController
   # GET /espacios_comunes
   # GET /espacios_comunes.json
   def index
-    @espacios_comunes = EspacioComun.all
+    if session[:comunidad_id] == nil
+      not_found
+    else
+      cliente = current_user.cliente_id
+      comunidad = session[:comunidad_id]
+      @espacios_comunes = EspacioComun.all.includes(:comunidad).where("comunidades.cliente_id = '#{cliente}' and comunidades.id ='#{comunidad}'").references(:comunidad)
+    end  
   end
 
   # GET /espacios_comunes/1

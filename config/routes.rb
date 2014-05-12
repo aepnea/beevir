@@ -1,6 +1,10 @@
 Beevir::Application.routes.draw do
   
 
+  resources :remuneraciones
+
+  resources :remunereciones
+
   resources :empleados
 
   resources :solicitudes

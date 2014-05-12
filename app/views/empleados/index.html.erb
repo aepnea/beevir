@@ -28,7 +28,7 @@
         <td><%= empleado.rut %></td>
         <td><%= empleado.cargo %></td>
         <td><%= empleado.fecha_ingreso %></td>
-        <td><%= empleado.foto %></td>
+        <td><%= image_tag empleado.photo_path %></td>
         <td><%= empleado.comunidad_id %></td>
         <td><%= link_to 'Ver', empleado %></td>
         <td><%= link_to 'Editar', edit_empleado_path(empleado) %></td>

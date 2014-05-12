@@ -1,34 +1,35 @@
-<p id="notice"><%= notice %></p>
+  <% if session[:comunidad_id].to_s == @espacio_comun.comunidad_id.to_s %>
 
-<p>
-  <strong>Espacio comun:</strong>
-  <%= @espacio_comun.espacio_comun %>
-</p>
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Descripcion:</strong>
-  <%= @espacio_comun.descripcion %>
-</p>
+    <p>
+      <strong>Espacio comun:</strong>
+      <%= @espacio_comun.espacio_comun %>
+    </p>
 
-<p>
-  <strong>Reglamento:</strong>
-  <%= @espacio_comun.reglamento %>
-</p>
+    <p>
+      <strong>Descripcion:</strong>
+      <%= @espacio_comun.descripcion %>
+    </p>
 
-<p>
-  <strong>Precio:</strong>
-  <%= @espacio_comun.precio %>
-</p>
+    <p>
+      <strong>Reglamento:</strong>
+      <%= @espacio_comun.reglamento %>
+    </p>
 
-<p>
-  <strong>Foto:</strong>
-  <%= @espacio_comun.foto %>
-</p>
+    <p>
+      <strong>Precio:</strong>
+      <%= @espacio_comun.precio %>
+    </p>
 
-<p>
-  <strong>Comunidad:</strong>
-  <%= @espacio_comun.comunidad_id %>
-</p>
+    <p>
+      <strong>Foto:</strong>
+      <%= image_tag @espacio_comun.photo_path %>
+    </p>
 
-<%= link_to 'Edit', edit_espacio_comun_path(@espacio_comun) %> |
-<%= link_to 'Back', espacios_comunes_path %>
+
+      <%= link_to 'Editar', edit_espacio_comun_path(@espacio_comun) %> |
+      <%= link_to 'Volver', espacios_comunes_path %>
+  <%else%>
+      <h1>Invalid Url</h1>
+  <%end%>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  empleado_id: 1
+  fecha: 2014-05-09
+  comunidad_id: 1
+
+two:
+  empleado_id: 1
+  fecha: 2014-05-09
+  comunidad_id: 1

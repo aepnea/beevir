@@ -1,0 +1,31 @@
+<h1>Listing remuneraciones</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Empleado</th>
+      <th>Fecha</th>
+      <th>Comunidad</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @remuneraciones.each do |remuneracion| %>
+      <tr>
+        <td><%= remuneracion.empleado_id %></td>
+        <td><%= remuneracion.fecha %></td>
+        <td><%= remuneracion.comunidad_id %></td>
+        <td><%= link_to 'Show', remuneracion %></td>
+        <td><%= link_to 'Edit', edit_remuneracion_path(remuneracion) %></td>
+        <td><%= link_to 'Destroy', remuneracion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Remuneracion', new_remuneracion_path %>
