@@ -3,4 +3,38 @@ class Solicitud < ActiveRecord::Base
 	belongs_to :comunidad
 	belongs_to :estado
 	belongs_to :role
+
+		FOTOS = File.join Rails.root, 'public', 'solicitudes'
+	after_save :guardar_foto
+
+	def adjunto=(file_data)
+		unless file_data.blank?
+			@file_data = file_data
+			@extension = file_data.original_filename
+		end
+	end
+
+	def photo_filename
+		File.join FOTOS, "#{@extension}"
+	end
+
+	def photo_path
+		"/solicitudes/#{@extension}"
+	end
+
+	def has_photo?
+		File.exists? photo_filename		
+	end
+
+	private
+
+	def guardar_foto
+		if @file_data
+			FileUtils.mkdir_p FOTOS
+			File.open(photo_filename, 'wb') do |f|
+				f.write(@file_data.read)
+			end
+			@file_data = nil
+		end
+	end
 end

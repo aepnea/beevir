@@ -5,7 +5,7 @@ class SolicitudesController < ApplicationController
   # GET /solicitudes.json
   def index
     if session[:comunidad_id] == nil
-      raise "Invalid Url"
+      not_found 
     else
       cliente = current_user.cliente_id
       comunidad = session[:comunidad_id]

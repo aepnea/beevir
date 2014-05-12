@@ -21,7 +21,7 @@
       <tr>
         <td><%= solicitud.titulo %></td>
         <td><%= solicitud.descripcion %></td>
-        <td><%= solicitud.adjunto %></td>
+        <td><%= image_tag solicitud.photo_path %></td>
         <td><%= solicitud.comunidad.nombre %></td>
         <td><%= solicitud.unidad.numero %></td>
         <td><%= solicitud.estado.estado %></td>

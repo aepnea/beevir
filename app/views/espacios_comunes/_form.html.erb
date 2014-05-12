@@ -1,4 +1,4 @@
-<%= form_for(@espacio_comun) do |f| %>
+<%= form_for(@espacio_comun, html: {multipart: true}) do |f| %>
   <% if @espacio_comun.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@espacio_comun.errors.count, "error") %> prohibited this espacio_comun from being saved:</h2>

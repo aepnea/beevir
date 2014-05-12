@@ -1,4 +1,4 @@
-<%= form_for(@solicitud) do |f| %>
+<%= form_for(@solicitud, html: {multipart: true}) do |f| %>
   <% if @solicitud.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@solicitud.errors.count, "error") %> prohibited this solicitud from being saved:</h2>
@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :adjunto %><br>
-    <%= f.text_field :adjunto %>
+    <%= f.file_field :adjunto %>
   </div>
   <div class="field">
     <%= f.hidden_field :comunidad_id, :value => "#{session[:comunidad_id]}" %>
