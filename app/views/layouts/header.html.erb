@@ -17,7 +17,7 @@
 		<div class="contHeader">
 	      <div class="logo">
 	        <figure>
-	          <img src=<%= image_path("logo.png") %> alt="">
+	          <a href="<%= root_path %>"><img src=<%= image_path("logo.png") %> alt="Beevir"></a>
 	        </figure>
 	      </div>
 
@@ -37,11 +37,15 @@
 	</header>
 	<nav class="listas">
 		<ul>
-			<a href="#"><li>home</li></a>
-			<a href="#"><li>link1</li></a>
-			<a href="#"><li>link2</li></a>
-			<a href="#"><li>link3</li></a>
-			<a href="#"><li>link4</li></a>
+			<a href="<%= root_path %>"><li>home</li></a>
+			<a href="<%= sectores_path %>"><li>Sectores</li></a>
+			<a href="<%= unidades_path %>"><li>Unidades</li></a>
+			<a href="<%= root_path %>"><li>Directorio Residentes</li></a>
+			<a href="<%= empleados_path %>"><li>Empleados</li></a>
+			<a href="<%= espacios_comunes_path %>"><li>Espacios Comunes</li></a>
+			<a href="<%= root_path %>"><li>Calendario</li></a>
+			<a href="<%= root_path %>"><li>Reglamento</li></a>
+			<a href="<%= remuneraciones_path %>"><li>Remuneraciones</li></a>
 		</ul>
 	</nav>
 	<%= yield %>

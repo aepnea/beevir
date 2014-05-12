@@ -30,13 +30,13 @@ ActiveRecord::Schema.define(version: 20140509205837) do
     t.string   "nombre"
     t.string   "direccion"
     t.string   "ciudad"
+    t.string   "rut"
     t.integer  "region_id"
     t.integer  "tipo_unidad_id"
     t.integer  "user_id"
     t.integer  "cliente_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "rut"
   end
 
   create_table "comunidades_users", force: true do |t|
