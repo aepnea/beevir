@@ -9,10 +9,10 @@
 				<li>
 					<figure>
 						<div class="comunidad">
-							<%= link_to image_tag("comunidadgris.svg"), admin_panel_path(:controller => 'admin', :action => 'sector', :comunidad_id => "#{comunidades.id}"), :method => :post %>
+							<%= link_to image_tag("comunidadgris.svg"), admin_panel_path(:controller => 'admin', :action => 'sector', :comunidad_id => "#{comunidades.id}") %>
 						</div>
 						<figcaption class="comuNombre">
-							<%= link_to "#{comunidades.nombre}", admin_panel_path(:controller => 'admin', :action => 'sector', :comunidad_id => "#{comunidades.id}"), :method => :post %>
+							<%= link_to "#{comunidades.nombre}", admin_panel_path(:controller => 'admin', :action => 'sector', :comunidad_id => "#{comunidades.id}") %>
 							<p class="mensajes">Tienes 6 mensajes</p>
 							<p class="asuntos"><%="#{solicitudes}"%> asuntos pendientes</p>
 						</figcaption>
